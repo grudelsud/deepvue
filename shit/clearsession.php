@@ -7,6 +7,8 @@
 /* Load and clear sessions */
 session_start();
 session_destroy();
- 
+
+setcookie( "dv", "", time() - 3600 );
+
 /* Redirect to page with the connect to Twitter option. */
 header('Location: index.php');

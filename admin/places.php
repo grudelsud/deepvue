@@ -7,6 +7,8 @@ $msg = $now." -- ";
 if( !empty( $_POST["submit"]) ) {
 
 	$user = $_POST["user"]; // => liquene
+	
+	// TODO: change to reflect last method signature
 	$id_user = chk_credentials( $user );
 	$msg .= "uid=".$id_user." -- ";
 	

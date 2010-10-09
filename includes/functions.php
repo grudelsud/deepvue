@@ -27,6 +27,44 @@ function siteinfo( $value )
 		echo $dvfe->get_theme_directory();
 	}
 }
+
+function set_dv_globals() {
+	global $dv_globals;
+
+	// first run of the application in this session
+	if( !isset( $_SESSION['running'] )) {
+		if( isset($_COOKIE['dv']) ) {
+			foreach( $_COOKIE['dv'] as $key => $value ) {
+				$dv_globals[ $key ] = $value;
+				$_SESSION[ $key ] = $value;
+			}
+			$user_result = chk_credentials( "oauth_id", $dv_globals['oauth_id'] );
+		}
+	}
+
+	if( !empty( $user_result ) ) {
+		$_SESSION['running'] = true;
+
+		// authenticated on twitter, allowed to browse and register
+		$dv_globals['user_auth'] = true;
+		
+		if( !empty( $user_result->user_code ) ) {
+			// authenticated and registered, allowed to browse and post
+			$dv_globals['user_reg'] = false; 
+		}
+	} else {
+		// authenticated on twitter, allowed to browse and register
+		$dv_globals['user_auth'] = false;
+		// authenticated and registered, allowed to browse and post
+		$dv_globals['user_reg'] = false; 
+	}	
+}
+
+function get_dv_globals( $param ) {
+	global $dv_globals;
+	return $dv_globals[ $param ];
+}
+
 function move_uploaded( $fileField, $chkValidImage = true, $fileName = CONS_EMPTY, $dir = UPLOAD_DIR ) {
 	if ($_FILES[$fileField]["error"] == UPLOAD_ERR_OK) {
 		$tmp_name = $_FILES[$fileField]["tmp_name"];
@@ -58,15 +96,15 @@ function move_uploaded( $fileField, $chkValidImage = true, $fileName = CONS_EMPT
 	return false;
 }
 
-function chk_credentials( $key ) {
+function chk_credentials( $key, $value ) {
 	global $table_prefix, $dvdb;
 	$table = $table_prefix."user";
-	$field = "user_login";
-	$result = $dvdb->get_row( "SELECT * FROM ".$table." WHERE ".$field."='". $key ."'" );
+
+	$result = $dvdb->get_row( "SELECT * FROM ".$table." WHERE ".$key."='". $value ."'" );
 	if ( !empty( $result ) ) {
-		return $result->id_user;
+		return $result;
 	} else {
-		return CONS_EMPTY;
+		return null;
 	}
 }
 

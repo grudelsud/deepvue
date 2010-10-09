@@ -60,8 +60,14 @@ require_once( INC.'/twitteroauth/twitteroauth/twitteroauth.php');
 
 $table_prefix  = 'dv_';
 $dvdb = new DVDB( DB_USER, DB_PASSWORD, DB_NAME, DB_HOST );
+
+// name of the folder containing the view template
+$dv_globals['dv_theme'] = 'view'; 
+
 $dvfe = new DVFE( $dvdb );
 $dvfe->set_absdomain( ABSDOMAIN );
+$dvfe->set_theme( $dv_globals['dv_theme'] );
 
 session_start();
+set_dv_globals();
 ?>

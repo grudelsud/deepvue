@@ -15,8 +15,15 @@
 			<h1>Deepvue</h1>
 		</div>
 		<div id="top-nav">
+<?php 
+	if( get_dv_globals('user_auth') ) {
+		
+?>
 			<ul>
 				<li><a href="?action=logout">logout</a></li>
 			</ul>
+<?php 
+	}
+?>
 		</div>
 	</div><!-- end of #header -->

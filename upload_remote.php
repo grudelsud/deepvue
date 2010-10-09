@@ -10,10 +10,12 @@ $has_photo = false;
 if( !empty( $_POST["deepvue_upload"]) ) {
 
 	$user = $_POST["user"]; // => liquene
-	$id_user = chk_credentials( $user );
-	$msg .= "uid=".$id_user." -- ";
+	$user_result = chk_credentials( "user_login", $user );
 
-	if( $id_user != CONS_EMPTY ) {
+	if( !empty( $user_result ) ) {
+
+		$id_user = $user_result->id_user;
+		$msg .= "uid=".$id_user." -- ";
 		
 		$table_el = $table_prefix."element";
 		$table_ev = $table_prefix."event";
@@ -44,7 +46,7 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 
 		if ( 1 == $_POST["is_new"] ) {
 			
-			// TODO and TBC: should it really close all previous running events?
+			// FIXME: should it really close all previous running events?
 			$dvdb->update( $table_ev, array( 'running' => 0 ), array( 'id_user' => $id_user ) );
 			
 			$values_ev['id_user'] = $id_user;
@@ -121,6 +123,18 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 		if ( $success ) {
 			$dvdb->insert( $table_el, $values_elem );
 			$msg .= "el_id=".$dvdb->insert_id." -- ";
+			
+			if( isset( $values_elem['is_best']) ) {
+				$oauth_token = $user_result->oauth_token;
+				$oauth_token_secret = $user_result->oauth_secret;
+				$twitteroauth = new TwitterOAuth( CONS_KEY, CONS_SECR, $oauth_token, $oauth_token_secret );
+
+				$parameters['status'] = "[TEST pls ignore] ".$caption." ".date(DATE_RFC822);
+				$parameters['lat'] = $values_elem['lat']; // => 11.111
+				$parameters['long'] = $values_elem['lon']; // => 22.222
+				$parameters['display_coordinates'] = true;
+				$status = $twitteroauth->post('statuses/update', $parameters);
+			}
 			
 			if( $has_photo ) {
 				$dvdb->update( $table_ev, array( 'has_photos' => 1 ), array( 'id_event' => $id_event ) );
