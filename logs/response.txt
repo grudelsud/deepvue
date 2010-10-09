@@ -1,0 +1,2411 @@
+Array
+(
+    [PHPSESSID] => 15d3ed490e5f4c435462d6e090443eb6
+)
+Array
+(
+    [ciao] => culo
+    [PHPSESSID] => 15d3ed490e5f4c435462d6e090443eb6
+)
+Mon, 23 Aug 10 11:21:04 +0100 -- Array
+(
+    [ciao] => tantaroba
+    [PHPSESSID] => 15d3ed490e5f4c435462d6e090443eb6
+)
+Mon, 23 Aug 10 11:23:49 +0100 -- Array
+(
+    [uploadButton] => Upload File
+)
+Mon, 23 Aug 10 11:28:29 +0100 -- Array
+(
+    [uploadButton] => Upload File
+)
+Mon, 23 Aug 10 11:35:09 +0100 -- Array
+(
+    [uploadButton] => Upload File
+name =\"latitude\"
+
+66.666
+)
+Mon, 23 Aug 10 11:37:39 +0100 -- Array
+(
+    [uploadButton] => Upload File
+;name =\"latitude\"
+
+66.666
+)
+Mon, 23 Aug 10 11:41:20 +0100 -- Array
+(
+    [uploadButton] => Upload File
+Content-Disposition: form-data; name =\"latitude\"
+
+66.666
+)
+Mon, 23 Aug 10 11:42:28 +0100 -- Array
+(
+    [uploadButton] => Upload File
+Content-Disposition: form-data; name=\"latitude\"
+
+66.666
+)
+Mon, 23 Aug 10 11:45:39 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+)
+Mon, 23 Aug 10 11:48:54 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+--NSFileManager--
+
+)
+Mon, 23 Aug 10 11:49:44 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+)
+Mon, 23 Aug 10 11:53:24 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+)
+Mon, 23 Aug 10 11:57:36 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+)
+Mon, 23 Aug 10 12:04:53 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+)
+Mon, 23 Aug 10 12:08:44 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+)
+Mon, 23 Aug 10 12:10:29 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+)
+Mon, 23 Aug 10 12:10:59 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+)
+Mon, 23 Aug 10 12:11:07 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+    [PHPSESSID] => 657411701821edc5639adbd032f82917
+)
+Mon, 23 Aug 10 12:11:16 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+    [PHPSESSID] => 657411701821edc5639adbd032f82917
+)
+Mon, 23 Aug 10 12:11:24 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+    [PHPSESSID] => 657411701821edc5639adbd032f82917
+)
+Mon, 23 Aug 10 12:11:37 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+    [PHPSESSID] => 657411701821edc5639adbd032f82917
+)
+Mon, 23 Aug 10 12:28:21 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [latitude] => 66.666
+    [longitude] => 33.333
+)
+Mon, 23 Aug 10 13:11:37 +0100 -- Array
+(
+    [uploadButton] => Upload File
+    [key] => value
+)
+Mon, 23 Aug 10 13:28:11 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 13:30:26 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 13:31:47 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 8b979d1344f2d1fd222e44d4e88a5643
+)
+Mon, 23 Aug 10 13:32:30 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 13:37:04 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 13:39:13 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 15:21:40 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 15:21:45 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => d05abc3526d7dc420e0e0758f8204ee4
+)
+Mon, 23 Aug 10 15:24:30 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 15:24:42 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e23cf849d185a642f5c37cbfe0cac90a
+)
+Mon, 23 Aug 10 15:24:49 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e23cf849d185a642f5c37cbfe0cac90a
+)
+Mon, 23 Aug 10 15:24:57 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e23cf849d185a642f5c37cbfe0cac90a
+)
+Mon, 23 Aug 10 15:25:04 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e23cf849d185a642f5c37cbfe0cac90a
+)
+Mon, 23 Aug 10 15:41:05 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 15:41:10 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 75ce24982bda39886483b21edb806028
+)
+Mon, 23 Aug 10 15:41:16 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 75ce24982bda39886483b21edb806028
+)
+Mon, 23 Aug 10 15:41:21 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 75ce24982bda39886483b21edb806028
+)
+Mon, 23 Aug 10 15:41:26 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 75ce24982bda39886483b21edb806028
+)
+Mon, 23 Aug 10 16:04:02 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 16:09:51 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 16:35:37 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 16:35:48 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e2ab270c3eb3e756d0ef0603ec884dc2
+)
+Mon, 23 Aug 10 16:36:03 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e2ab270c3eb3e756d0ef0603ec884dc2
+)
+Mon, 23 Aug 10 16:36:20 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e2ab270c3eb3e756d0ef0603ec884dc2
+)
+Mon, 23 Aug 10 16:36:32 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e2ab270c3eb3e756d0ef0603ec884dc2
+)
+Mon, 23 Aug 10 16:36:53 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e2ab270c3eb3e756d0ef0603ec884dc2
+)
+Mon, 23 Aug 10 16:37:01 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e2ab270c3eb3e756d0ef0603ec884dc2
+)
+Mon, 23 Aug 10 16:37:11 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e2ab270c3eb3e756d0ef0603ec884dc2
+)
+Mon, 23 Aug 10 16:37:30 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e2ab270c3eb3e756d0ef0603ec884dc2
+)
+Mon, 23 Aug 10 16:37:55 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => e2ab270c3eb3e756d0ef0603ec884dc2
+)
+Mon, 23 Aug 10 16:47:49 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 16:48:32 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => a3e1f7306a636cbf5dd9b93698716f21
+)
+Mon, 23 Aug 10 16:48:50 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => a3e1f7306a636cbf5dd9b93698716f21
+)
+Mon, 23 Aug 10 16:50:18 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => a3e1f7306a636cbf5dd9b93698716f21
+)
+Mon, 23 Aug 10 17:07:21 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 17:07:36 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => dbd35a7073b21926985fedbd7ca76fb7
+)
+Mon, 23 Aug 10 17:07:48 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => dbd35a7073b21926985fedbd7ca76fb7
+)
+Mon, 23 Aug 10 17:08:06 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => dbd35a7073b21926985fedbd7ca76fb7
+)
+Mon, 23 Aug 10 17:54:00 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 17:59:20 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 18:00:08 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => f1cea8b8714f2ab8efacdda9888814cf
+)
+Mon, 23 Aug 10 18:00:20 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => f1cea8b8714f2ab8efacdda9888814cf
+)
+Mon, 23 Aug 10 18:18:42 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 18:18:51 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ca1bbe7b40c3e837a0471a894e172fc1
+)
+Mon, 23 Aug 10 18:19:36 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 18:19:39 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 4ddc52e40031b8dab57488e3d47ebbeb
+)
+Mon, 23 Aug 10 18:19:45 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 4ddc52e40031b8dab57488e3d47ebbeb
+)
+Mon, 23 Aug 10 18:19:52 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 4ddc52e40031b8dab57488e3d47ebbeb
+)
+Mon, 23 Aug 10 18:19:59 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 4ddc52e40031b8dab57488e3d47ebbeb
+)
+Mon, 23 Aug 10 18:20:11 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 4ddc52e40031b8dab57488e3d47ebbeb
+)
+Mon, 23 Aug 10 18:20:25 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 4ddc52e40031b8dab57488e3d47ebbeb
+)
+Mon, 23 Aug 10 18:20:41 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 4ddc52e40031b8dab57488e3d47ebbeb
+)
+Mon, 23 Aug 10 18:20:48 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 4ddc52e40031b8dab57488e3d47ebbeb
+)
+Mon, 23 Aug 10 18:20:56 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 4ddc52e40031b8dab57488e3d47ebbeb
+)
+Mon, 23 Aug 10 18:21:02 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 4ddc52e40031b8dab57488e3d47ebbeb
+)
+Mon, 23 Aug 10 18:22:31 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 18:22:38 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:22:45 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:22:52 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:22:59 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:23:07 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:23:15 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:23:23 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:23:30 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:23:38 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:23:47 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:23:56 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:24:20 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:24:29 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:24:36 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:24:43 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:24:50 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:24:56 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:25:04 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => ac547f15b718fdc2a9e7dc13e35b86cf
+)
+Mon, 23 Aug 10 18:27:49 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 18:27:54 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 7fc3af1b5dface26fd40c2530ac37b59
+)
+Mon, 23 Aug 10 18:28:00 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 7fc3af1b5dface26fd40c2530ac37b59
+)
+Mon, 23 Aug 10 18:28:05 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 7fc3af1b5dface26fd40c2530ac37b59
+)
+Mon, 23 Aug 10 18:28:11 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 7fc3af1b5dface26fd40c2530ac37b59
+)
+Mon, 23 Aug 10 18:39:28 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 18:39:30 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)
+Mon, 23 Aug 10 18:39:34 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:39:39 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:39:44 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:39:53 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:39:57 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:40:02 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:40:08 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:40:11 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:40:17 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:40:21 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:40:33 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:40:39 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:40:44 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:40:49 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:40:54 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:40:59 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:41:04 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:41:09 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:41:14 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:41:20 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:41:24 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:41:28 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:41:33 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:41:44 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:41:57 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:42:02 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:42:09 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+    [PHPSESSID] => 9a80cd7500044073c5bc21adc39afdb2
+)
+Mon, 23 Aug 10 18:43:36 +0100 -- Array
+(
+    [deepvue_upload] => deepvue
+    [user] => liquene
+    [lat] => 11.111
+    [lon] => 22.222
+    [caption] => this is a caption, in this case image should be null.jpg
+    [is_best] => true
+    [metric] => 666.666
+    [is_public] => false
+    [time] => 2010-08-08 14:14:14 +0200
+    [app_version] => 0
+    [is_new] => true
+    [lat_start] => 33.333
+    [lon_start] => 44.444
+    [lat_end] => 55.555
+    [lon_end] => 66.666
+    [time_start] => 2010-08-08 13:13:13 +0200
+    [time_end] => 2010-08-08 15:15:15 +0200
+)

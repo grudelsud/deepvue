@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>deepvue - test</title>
+<link href="css/deepvue.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="lib/jquery-1.4.2.min.js"></script>          
+<script type="text/javascript">                                         
+$(document).ready(function() {
+	// generate markup
+	$("#content").append("get images: ");
+	$("#content").append("<a href='#'>liquene</a> ");
+
+	// add markup to container and apply click handlers to anchors
+	$("#content a").click( function(e) {
+		// stop normal link click
+		e.preventDefault();
+
+		// send request
+		$.ajax({
+			url: "test.php",
+			data: {user_login: $(this).html()},
+			dataType: "json",
+			type: "POST",
+			success: function( data ) {
+				$.each(data, function(key, value) {
+					$("#content").append( "<a href='"+value.name+"'><img src='"+value.thumb+"' /></a>" );
+				});
+			}
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="content"></div>
+</body>
+</html>

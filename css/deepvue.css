@@ -1,0 +1,64 @@
+/* CSS Document */
+
+body {
+	background: #000000; 
+	color: #DDD;
+	margin: 0px;
+	font-family: sans-serif;
+	font-size: 0.8em;
+}
+
+@font-face {
+	font-family: 'BebasNeueRegular';
+	src: url('BebasNeue-webfont.eot');
+	src: local('☺'), url('BebasNeue-webfont.svg#webfont2iOQGOJ3') format('svg'), url('BebasNeue-webfont.woff') format('woff'), url('BebasNeue-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*
+
+	Structure:
+	
+	wrapper
+		header
+			logo
+			top-nav
+		navigation
+		main
+		footer
+*/
+#wrapper { margin: 0 auto; width: 960px; position: relative; }
+#header { position: absolute; top: 0; left: 0; }
+#navigation { background: #999; position: absolute; top: 0; left: 0; }
+#main { background: #332; padding: 30px; position: absolute; top: 80px; left: 0; }
+#footer {}
+
+#debug { position: absolute; font-size: 70%; color: #EEE; z-index: 100; bottom: 0; right: 0; width: 600px; height: 250px; overflow: auto; background: #234; }
+
+h2 {
+	font-family: "BebasNeueRegular", helvetica, Arial, Sans-Serif;
+	color: #ffffff;
+	height: 32px; 
+	margin-top: 0px;
+	font-size: 30px;
+	padding: 0px 0px 0px 0px;
+}
+
+h3 {
+	font-family: "BebasNeueRegular", helvetica, Arial, Sans-Serif;
+	color: #ffffff;
+	height: 20px; 
+	margin-top: 0px;
+	font-size: 20px;
+	padding: 0px 0px 0px 0px;
+}
+
+a { text-decoration: none; color: #666; }
+a:hover { text-decoration: underline; }
+
+input { background: #333; border: 1px solid #DDD; color: #DDD; }
+
+th, td { padding: 5px; border-bottom: 1px solid #333;}
+th, tr:hover { background: #333; }
+
