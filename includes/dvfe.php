@@ -13,7 +13,7 @@ class DVFE {
 		return $this->__construct( $dvdb );
 	}
 
-	public function __construct(  &$dvdb )
+	public function __construct( &$dvdb )
 	{
 		$this->dvdb = $dvdb;
 	}
@@ -38,19 +38,36 @@ class DVFE {
 		include( $this->theme . '/header.php' );
 	}
 
-	public function get_footer()
-	{
-		include( $this->theme . '/footer.php' );
-	}
-
 	public function get_login()
 	{
 		include( $this->theme . '/login.php' );
 	}
 
+	public function get_reg()
+	{
+		include( $this->theme . '/registration.php' );
+	}
+	
+	public function get_main()
+	{
+		include( $this->theme . '/index.php' );
+	}
+
+	public function get_navigation()
+	{
+		include( $this->theme . '/navigation.php' );
+	}
+
+	public function get_footer()
+	{
+		include( $this->theme . '/footer.php' );
+	}
+	
 	public function get_data( $user_login = "", $year = 2010, $month = 9, $format = JSON )
 	{
 		$this->data = array();
+
+		// TODO: add temporal boundaries
 		$this->get_images( $user_login );
 		$this->data['images'] = $this->last_images;
 		$this->data['image_count'] = count( $this->last_images );
@@ -66,9 +83,10 @@ class DVFE {
 	/**
 	 * Retrieve a list of images
 	 */
-	public function get_images( $user_login = "", $format = JSON ) 
+	public function get_images( $id_element = "", $user_login = "", $public_only = true, $format = JSON ) 
 	{
-		$elements = $this->dvdb->get_elements( $user_login );
+		// TODO: add temporal boundaries
+		$elements = $this->dvdb->get_elements( $id_element, $user_login, $public_only );
 		$this->last_images = array();
 
 		$index = 0;
@@ -77,6 +95,7 @@ class DVFE {
 				$img_src = ABSDOMAIN.UPLOAD_FOLDER."/".$element->filename.".".$element->ext;
 				$img_thumb_src = ABSDOMAIN.UPLOAD_FOLDER."/".$element->filename."-".THUMB_SUFFIX.".".$element->ext;
 				
+				$this->last_images[$index]['id_element'] = $element->id_element;
 				$this->last_images[$index]['name'] = $img_src;
 				$this->last_images[$index]['thumb'] = $img_thumb_src;
 				$index++;
@@ -85,7 +104,7 @@ class DVFE {
 		if( $format == JSON ) {
 			return json_encode( $this->last_images );
 		} else {
-			return $last_images;
+			return $this->last_images;
 		}
 	}
 	

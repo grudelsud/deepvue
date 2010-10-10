@@ -30,15 +30,17 @@ if( !empty($_REQUEST['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !
 			$dvdb->update( $table, array('oauth_token' => $access_token['oauth_token'], 'oauth_secret' => $access_token['oauth_token_secret']), array('oauth_id' => $user_info->id) );
 		}
 		$_SESSION['user_id'] = $result->id_user;
-		$_SESSION['user_login'] = $result->user_login;
-		$_SESSION['oauth_id'] = $result->oauth_id;
-		$_SESSION['oauth_token'] = $result->oauth_token;
-		$_SESSION['oauth_token_secret'] = $result->oauth_secret;
+		$_SESSION['user_login'] = $access_token['screen_name'];
+		$_SESSION['oauth_id'] = $access_token['user_id'];
+		$_SESSION['oauth_token'] = $access_token['oauth_token'];
+		$_SESSION['oauth_token_secret'] = $access_token['oauth_token_secret'];
 		
+		unset( $_SESSION['access_token'] );
+
 		// TODO: check security
 		$best_before = time() + 3600 * 24 * 7;
 		foreach( $_SESSION as $key => $value ) {
-			setcookie( "dv[$key]", $value, $best_before );
+			setcookie( $key, $value, $best_before );
 		}
 
 		header('Location: index.php');

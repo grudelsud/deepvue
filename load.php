@@ -2,7 +2,6 @@
 define( 'DEBUG', true );
 
 define( 'SUBPATH', '/deepvue' );
-
 define( 'ABSDOMAIN', 'http://'.$_SERVER['SERVER_NAME'].SUBPATH.'/' );
 define( 'ABSPATH', dirname(__FILE__) . '/' );
 define( 'LOG_DIR', ABSPATH.'/logs');
@@ -67,6 +66,9 @@ $dv_globals['dv_theme'] = 'view';
 $dvfe = new DVFE( $dvdb );
 $dvfe->set_absdomain( ABSDOMAIN );
 $dvfe->set_theme( $dv_globals['dv_theme'] );
+
+$dv_globals['dvdb'] = &$dvdb;
+$dv_globals['dvfe'] = &$dvfe;
 
 session_start();
 set_dv_globals();

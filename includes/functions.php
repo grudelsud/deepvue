@@ -4,19 +4,18 @@ function log_req( $msg, $file_name = 'default.log' ) {
 	if ( DEBUG ) {
 		$handler = fopen( LOG_DIR."/".$file_name, "a+" );
 		$msg .= "\n";
-		fwrite( $handler, $msg ); 
+		fwrite( $handler, $msg );
 		fclose( $handler );
 	}
 }
 
-function logout() 
+function logout()
 {
-	unset( $_SESSION['oauth_token'] );
-	unset( $_SESSION['oauth_token_secret'] );
-	unset( $_SESSION['access_token'] );
-	unset( $_SESSION['user_id'] );
-	unset( $_SESSION['user_login'] );
-	unset( $_SESSION['oauth_id'] );
+	foreach( $_COOKIE as $key => $val ) {
+		setcookie( $key, "", 1 );
+	}
+	session_start();
+	session_destroy();
 }
 
 // returns informations regarding directories, theme and related
@@ -33,13 +32,18 @@ function set_dv_globals() {
 
 	// first run of the application in this session
 	if( !isset( $_SESSION['running'] )) {
-		if( isset($_COOKIE['dv']) ) {
-			foreach( $_COOKIE['dv'] as $key => $value ) {
-				$dv_globals[ $key ] = $value;
-				$_SESSION[ $key ] = $value;
-			}
-			$user_result = chk_credentials( "oauth_id", $dv_globals['oauth_id'] );
+		foreach( $_COOKIE as $key => $value ) {
+			$dv_globals[ $key ] = $value;
+			$_SESSION[ $key ] = $value;
 		}
+	} else {
+		foreach( $_SESSION as $key => $value ) {
+			$dv_globals[ $key ] = $value;
+		}
+	}
+
+	if( isset( $dv_globals['oauth_id'] ) ) {
+		$user_result = chk_credentials( "oauth_id", $dv_globals['oauth_id'] );
 	}
 
 	if( !empty( $user_result ) ) {
@@ -47,17 +51,19 @@ function set_dv_globals() {
 
 		// authenticated on twitter, allowed to browse and register
 		$dv_globals['user_auth'] = true;
-		
-		if( !empty( $user_result->user_code ) ) {
+
+		if( empty( $user_result->user_email ) ) {
+			$dv_globals['user_reg'] = false;
+		} else {
 			// authenticated and registered, allowed to browse and post
-			$dv_globals['user_reg'] = false; 
+			$dv_globals['user_reg'] = true;
 		}
 	} else {
 		// authenticated on twitter, allowed to browse and register
 		$dv_globals['user_auth'] = false;
 		// authenticated and registered, allowed to browse and post
-		$dv_globals['user_reg'] = false; 
-	}	
+		$dv_globals['user_reg'] = false;
+	}
 }
 
 function get_dv_globals( $param ) {
@@ -108,8 +114,24 @@ function chk_credentials( $key, $value ) {
 	}
 }
 
+// FIXME: solve latm / lonm issue
 function find_place( $id_user, $lat, $lon ) {
-	// TODO: implement!
+
+	global $dvdb;
+	$radius = 80;
+	$latm = 111000;
+	$lonm = 111000;
+	$places = $dvdb->get_places( $id_user );
+
+	foreach ($places as $place) {
+		$dlatm = ($lat - $place->lat) * $latm;
+		$dlonm = ($lon - $place->lon) * $lonm;
+
+		$dist = round( sqrt($dlatm*$dlatm + $dlonm*$dlonm) );
+		if ( $dist < $radius ) {
+			return $place->id_place;
+		}
+	}
 	return 0;
 }
 
@@ -129,20 +151,20 @@ function dv_die( $message ) {
  */
 function dv_load_image( $file ) {
 	if ( is_numeric( $file ) )
-		$file = get_attached_file( $file );
+	$file = get_attached_file( $file );
 
 	if ( ! file_exists( $file ) )
-		return sprintf(__('File &#8220;%s&#8221; doesn&#8217;t exist?'), $file);
+	return sprintf(__('File &#8220;%s&#8221; doesn&#8217;t exist?'), $file);
 
 	if ( ! function_exists('imagecreatefromstring') )
-		return __('The GD image library is not installed.');
+	return __('The GD image library is not installed.');
 
 	// Set artificially high because GD uses uncompressed images in memory
 	@ini_set('memory_limit', '256M');
 	$image = imagecreatefromstring( file_get_contents( $file ) );
 
 	if ( !is_resource( $image ) )
-		return sprintf(__('File &#8220;%s&#8221; is not an image.'), $file);
+	return sprintf(__('File &#8220;%s&#8221; is not an image.'), $file);
 
 	return $image;
 }
@@ -177,7 +199,7 @@ function dv_imagecreatetruecolor($width, $height) {
  */
 function dv_constrain_dimensions( $current_width, $current_height, $max_width=0, $max_height=0 ) {
 	if ( !$max_width and !$max_height )
-		return array( $current_width, $current_height );
+	return array( $current_width, $current_height );
 
 	$width_ratio = $height_ratio = 1.0;
 	$did_width = $did_height = false;
@@ -197,11 +219,11 @@ function dv_constrain_dimensions( $current_width, $current_height, $max_width=0,
 	$larger_ratio  = max( $width_ratio, $height_ratio );
 
 	if ( intval( $current_width * $larger_ratio ) > $max_width || intval( $current_height * $larger_ratio ) > $max_height )
- 		// The larger ratio is too big. It would result in an overflow.
-		$ratio = $smaller_ratio;
+	// The larger ratio is too big. It would result in an overflow.
+	$ratio = $smaller_ratio;
 	else
-		// The larger ratio fits, and is likely to be a more "snug" fit.
-		$ratio = $larger_ratio;
+	// The larger ratio fits, and is likely to be a more "snug" fit.
+	$ratio = $larger_ratio;
 
 	$w = intval( $current_width  * $ratio );
 	$h = intval( $current_height * $ratio );
@@ -210,9 +232,9 @@ function dv_constrain_dimensions( $current_width, $current_height, $max_width=0,
 	// We also have issues with recursive calls resulting in an ever-changing result. Contraining to the result of a constraint should yield the original result.
 	// Thus we look for dimensions that are one pixel shy of the max value and bump them up
 	if ( $did_width && $w == $max_width - 1 )
-		$w = $max_width; // Round it up
+	$w = $max_width; // Round it up
 	if ( $did_height && $h == $max_height - 1 )
-		$h = $max_height; // Round it up
+	$h = $max_height; // Round it up
 
 	return array( $w, $h );
 }
@@ -234,10 +256,10 @@ function dv_constrain_dimensions( $current_width, $current_height, $max_width=0,
 function image_resize_dimensions($orig_w, $orig_h, $dest_w, $dest_h, $crop = false) {
 
 	if ($orig_w <= 0 || $orig_h <= 0)
-		return false;
+	return false;
 	// at least one of dest_w or dest_h must be specific
 	if ($dest_w <= 0 && $dest_h <= 0)
-		return false;
+	return false;
 
 	if ( $crop ) {
 		// crop the largest possible portion of the original image that we can size to $dest_w x $dest_h
@@ -273,7 +295,7 @@ function image_resize_dimensions($orig_w, $orig_h, $dest_w, $dest_h, $crop = fal
 
 	// if the resulting image would be the same size or larger we don't want to resize it
 	if ( $new_w >= $orig_w && $new_h >= $orig_h )
-		return false;
+	return false;
 
 	// the return array matches the parameters to imagecopyresampled()
 	// int dst_x, int dst_y, int src_x, int src_y, int dst_w, int dst_h, int src_w, int src_h
@@ -335,7 +357,7 @@ function image_resize( $file, $max_w, $max_h, $crop = false, $suffix = null, $de
 
 	// $suffix will be appended to the destination filename, just before the extension
 	if ( !$suffix )
-		$suffix = "{$dst_w}x{$dst_h}";
+	$suffix = "{$dst_w}x{$dst_h}";
 
 	$info = pathinfo($file);
 	$dir = $info['dirname'];

@@ -12,7 +12,7 @@
 <div id="wrapper">
 	<div id="header">
 		<div id="logo">
-			<h1>Deepvue</h1>
+			<h1><a href="?">Deepvue</a></h1>
 		</div>
 		<div id="top-nav">
 <?php 
@@ -20,6 +20,7 @@
 		
 ?>
 			<ul>
+				<li><a href="?action=profile">profile</a></li>
 				<li><a href="?action=logout">logout</a></li>
 			</ul>
 <?php 

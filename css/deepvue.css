@@ -34,7 +34,7 @@ body {
 #main { background: #332; padding: 30px; position: absolute; top: 80px; left: 0; }
 #footer {}
 
-#debug { position: absolute; font-size: 70%; color: #EEE; z-index: 100; bottom: 0; right: 0; width: 600px; height: 250px; overflow: auto; background: #234; }
+#debug { position: fixed; font-size: 70%; color: #EEE; z-index: 100; bottom: 0; right: 0; width: 600px; height: 250px; overflow: auto; background: #234; }
 
 h2 {
 	font-family: "BebasNeueRegular", helvetica, Arial, Sans-Serif;
