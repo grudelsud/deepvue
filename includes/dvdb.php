@@ -42,6 +42,32 @@ class DVDB {
 	}
 
 	/**
+	 * Retrieve list of comments
+	 *
+	 * @param string $id_element
+	 * @return array of comments objects with properties:
+	 */
+	public function get_comments( $id_element = "" ) {
+		global $table_prefix;
+		
+		$tbl_comment = $table_prefix."comment";
+		$tbl_user = $table_prefix."user";
+		
+		$sql  = "SELECT ".$tbl_comment.".id_comment as id_comment, ".$tbl_comment.".id_element as id_element, ";
+		$sql .= $tbl_comment.".id_user as id_user, ".$tbl_user.".user_login as user_login, ";
+		$sql .= $tbl_comment.".user_email as user_email, ".$tbl_comment.".comment_approved as comment_approved, ";
+		$sql .= $tbl_comment.".comment_content as comment_content ";
+
+		$sql .= "FROM ".$tbl_comment.", ".$tbl_user." ";
+		$sql .= "WHERE ".$tbl_comment.".id_user = ".$tbl_user.".id_user ";
+		$sql .= "AND ".$tbl_comment.".id_element=".$id_element." ";
+		
+		$sql .= "ORDER BY ".$tbl_comment.".id_comment ASC;";
+		
+		$this->query( $sql );
+		return $this->last_result;
+	}
+	/**
 	 * Retrieve list of elements
 	 *
 	 * @param string $user_login
