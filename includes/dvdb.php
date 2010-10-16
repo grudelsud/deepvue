@@ -47,7 +47,7 @@ class DVDB {
 	 * @param string $id_element
 	 * @return array of comments objects with properties:
 	 */
-	public function get_comments( $id_element = "" ) {
+	public function get_comments( $id_element = "", $format = OBJECT ) {
 		global $table_prefix;
 		
 		$tbl_comment = $table_prefix."comment";
@@ -55,8 +55,8 @@ class DVDB {
 		
 		$sql  = "SELECT ".$tbl_comment.".id_comment as id_comment, ".$tbl_comment.".id_element as id_element, ";
 		$sql .= $tbl_comment.".id_user as id_user, ".$tbl_user.".user_login as user_login, ";
-		$sql .= $tbl_comment.".user_email as user_email, ".$tbl_comment.".comment_approved as comment_approved, ";
-		$sql .= $tbl_comment.".comment_content as comment_content ";
+		$sql .= $tbl_comment.".user_email as user_email, ".$tbl_comment.".comment_status as comment_status, ";
+		$sql .= $tbl_comment.".comment_content as comment_content, ".$tbl_comment.".created as created ";
 
 		$sql .= "FROM ".$tbl_comment.", ".$tbl_user." ";
 		$sql .= "WHERE ".$tbl_comment.".id_user = ".$tbl_user.".id_user ";
@@ -65,8 +65,40 @@ class DVDB {
 		$sql .= "ORDER BY ".$tbl_comment.".id_comment ASC;";
 		
 		$this->query( $sql );
-		return $this->last_result;
+		if( $this->num_rows > 0 ) {
+			if( $format == OBJECT ) {
+				return $this->last_result;
+			} else {
+				return json_encode( $this->last_result );
+			}
+		} else {
+			$obj = new stdClass();
+
+			if( $format == OBJECT ) {
+				return $obj;
+			} else {
+				return json_encode( $obj );
+			}
+		}
 	}
+	
+	/**
+	 * Add comment to list
+	 * 
+	 * @param unknown_type $id_element
+	 * @param unknown_type $id_user
+	 * @param unknown_type $comment_status
+	 * @param unknown_type $comment_content
+	 */
+	public function add_comment( $id_element, $id_user, $comment_status, $comment_content ) {
+		global $table_prefix;
+		$tbl_comment = $table_prefix."comment";
+		
+		// TODO: add logic! should add comment only if public, check DATE not working
+		$comment_values = array( "id_element" => $id_element, "id_user" => $id_user, "comment_status" => $comment_status, "comment_content" => $comment_content, "created" => date( 'r' ) );
+		$this->insert( $tbl_comment, $comment_values );
+	}
+
 	/**
 	 * Retrieve list of elements
 	 *
@@ -102,7 +134,11 @@ class DVDB {
 		$sql .= "ORDER BY ".$tbl_elem.".id_user, ".$tbl_elem.".id_event, created ASC;";
 		
 		$this->query( $sql );
-		return $this->last_result;
+		if( $this->num_rows > 0 ) {
+			return $this->last_result;
+		} else {
+			return new stdClass();
+		}
 	}
 
 	/**
@@ -128,7 +164,11 @@ class DVDB {
 		}
 		
 		$this->query( $sql );
-		return $this->last_result;
+		if( $this->num_rows > 0 ) {
+			return $this->last_result;
+		} else {
+			return new stdClass();
+		}
 	}
 
 	/**

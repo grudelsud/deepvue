@@ -5,3 +5,5 @@ in the meanwhile, the main issue regards the lack of a text field for author. ev
 is while the website is restricted to registered twitter user only. add DATE for comments!
 
 - db, table user: all logging fields and functionalities, last check-in, navigation tracking, ...
+
+- db, check tables element, event, comment: implement timezone

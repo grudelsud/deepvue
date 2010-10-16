@@ -1,0 +1,71 @@
+2010-10-16T20:07:17+01:00 --  REQUEST - Array
+(
+    [action] => read
+    [PHPSESSID] => 4b591e3ebf671f489fc320641c1fb65c
+    [oauth_token] => 36017645-Xju5mwqzuGPdWtgwkadBQHcINtoxKs9MdbJBZpd2G
+    [oauth_token_secret] => a3tjm4Y6ZNFWvRbMpqHDisQi6Md0r9cZ1lGwFhZnHyQ
+    [user_id] => 2
+    [user_login] => grudelsud
+    [oauth_id] => 36017645
+)
+ SESSION - Array
+(
+    [PHPSESSID] => 4b591e3ebf671f489fc320641c1fb65c
+    [oauth_token] => 36017645-Xju5mwqzuGPdWtgwkadBQHcINtoxKs9MdbJBZpd2G
+    [oauth_token_secret] => a3tjm4Y6ZNFWvRbMpqHDisQi6Md0r9cZ1lGwFhZnHyQ
+    [user_id] => 2
+    [user_login] => grudelsud
+    [oauth_id] => 36017645
+    [running] => 1
+    [view_elem] => 0
+)
+{}
+2010-10-16T20:23:12+01:00 -- action : read -- {}
+2010-10-16T20:23:20+01:00 -- action : read -- {}
+2010-10-16T20:24:45+01:00 -- action : read -- {}
+2010-10-16T20:24:48+01:00 -- action : read -- {}
+2010-10-16T20:24:52+01:00 -- action : read -- {}
+2010-10-16T20:24:54+01:00 -- action : read -- {}
+2010-10-16T20:24:55+01:00 -- action : read -- {}
+2010-10-16T20:24:57+01:00 -- action : read -- {}
+2010-10-16T20:24:59+01:00 -- action : read -- {}
+2010-10-16T20:25:07+01:00 -- action : read -- {}
+2010-10-16T20:37:48+01:00 -- action : read -- {}
+2010-10-16T20:37:53+01:00 -- action : read -- {}
+2010-10-16T20:39:34+01:00 -- action : read -- {}
+2010-10-16T20:39:49+01:00 -- action : read -- {}
+2010-10-16T20:39:49+01:00 -- action : create -- 
+2010-10-16T20:42:35+01:00 -- action: create -- content: puppo -- 
+2010-10-16T20:42:35+01:00 -- action: read -- {}
+2010-10-16T20:47:45+01:00 -- action: read -- {}
+2010-10-16T20:47:45+01:00 -- action: create -- content: puppo -- 
+2010-10-16T20:51:02+01:00 -- session: Array
+(
+    [PHPSESSID] => 4b591e3ebf671f489fc320641c1fb65c
+    [oauth_token] => 36017645-Xju5mwqzuGPdWtgwkadBQHcINtoxKs9MdbJBZpd2G
+    [oauth_token_secret] => a3tjm4Y6ZNFWvRbMpqHDisQi6Md0r9cZ1lGwFhZnHyQ
+    [user_id] => 2
+    [user_login] => grudelsud
+    [oauth_id] => 36017645
+    [running] => 1
+    [view_elem] => 0
+)
+ -- action: read -- {}
+2010-10-16T20:51:16+01:00 -- session: Array
+(
+    [PHPSESSID] => 4b591e3ebf671f489fc320641c1fb65c
+    [oauth_token] => 36017645-Xju5mwqzuGPdWtgwkadBQHcINtoxKs9MdbJBZpd2G
+    [oauth_token_secret] => a3tjm4Y6ZNFWvRbMpqHDisQi6Md0r9cZ1lGwFhZnHyQ
+    [user_id] => 2
+    [user_login] => grudelsud
+    [oauth_id] => 36017645
+    [running] => 1
+    [view_elem] => 2
+)
+ -- action: read -- {}
+2010-10-16T20:53:18+01:00 -- action: read -- q: SELECT dv_comment.id_comment as id_comment, dv_comment.id_element as id_element, dv_comment.id_user as id_user, dv_user.user_login as user_login, dv_comment.user_email as user_email, dv_comment.comment_approved as comment_approved, dv_comment.comment_content as comment_content FROM dv_comment, dv_user WHERE dv_comment.id_user = dv_user.id_user AND dv_comment.id_element=2 ORDER BY dv_comment.id_comment ASC; -- {}
+2010-10-16T20:55:46+01:00 -- action: read -- q: SELECT dv_comment.id_comment as id_comment, dv_comment.id_element as id_element, dv_comment.id_user as id_user, dv_user.user_login as user_login, dv_comment.user_email as user_email, dv_comment.comment_status as comment_status, dv_comment.comment_content as comment_content, dv_comment.created as created FROM dv_comment, dv_user WHERE dv_comment.id_user = dv_user.id_user AND dv_comment.id_element=2 ORDER BY dv_comment.id_comment ASC; -- [{"id_comment":"1","id_element":"2","id_user":"2","user_login":"grudelsud","user_email":null,"comment_status":"ACCEPTED","comment_content":"puppo","created":"0000-00-00 00:00:00"}]
+2010-10-16T20:59:18+01:00 -- action: read -- q: SELECT dv_comment.id_comment as id_comment, dv_comment.id_element as id_element, dv_comment.id_user as id_user, dv_user.user_login as user_login, dv_comment.user_email as user_email, dv_comment.comment_status as comment_status, dv_comment.comment_content as comment_content, dv_comment.created as created FROM dv_comment, dv_user WHERE dv_comment.id_user = dv_user.id_user AND dv_comment.id_element=2 ORDER BY dv_comment.id_comment ASC; -- [{"id_comment":"1","id_element":"2","id_user":"2","user_login":"grudelsud","user_email":null,"comment_status":"ACCEPTED","comment_content":"puppo","created":"0000-00-00 00:00:00"}]
+2010-10-16T20:59:26+01:00 -- action: read -- q: SELECT dv_comment.id_comment as id_comment, dv_comment.id_element as id_element, dv_comment.id_user as id_user, dv_user.user_login as user_login, dv_comment.user_email as user_email, dv_comment.comment_status as comment_status, dv_comment.comment_content as comment_content, dv_comment.created as created FROM dv_comment, dv_user WHERE dv_comment.id_user = dv_user.id_user AND dv_comment.id_element=2 ORDER BY dv_comment.id_comment ASC; -- [{"id_comment":"1","id_element":"2","id_user":"2","user_login":"grudelsud","user_email":null,"comment_status":"ACCEPTED","comment_content":"puppo","created":"0000-00-00 00:00:00"}]
+2010-10-16T20:59:26+01:00 -- action: create -- content: gnagno -- 
+2010-10-16T21:01:03+01:00 -- action: read -- [{"id_comment":"1","id_element":"2","id_user":"2","user_login":"grudelsud","user_email":null,"comment_status":"ACCEPTED","comment_content":"puppo","created":"0000-00-00 00:00:00"},{"id_comment":"2","id_element":"2","id_user":"2","user_login":"grudelsud","user_email":null,"comment_status":"ACCEPTED","comment_content":"gnagno","created":"0000-00-00 00:00:00"}]

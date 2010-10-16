@@ -62,24 +62,7 @@ class DVFE {
 	{
 		include( $this->theme . '/footer.php' );
 	}
-	
-	public function get_data( $user_login = "", $year = 2010, $month = 9, $format = JSON )
-	{
-		$this->data = array();
 
-		// TODO: add temporal boundaries
-		$this->get_images( $user_login );
-		$this->data['images'] = $this->last_images;
-		$this->data['image_count'] = count( $this->last_images );
-		$this->data['user_login'] = $user_login;
-		$this->data['year'] = $year;
-		$this->data['month'] = $month;
-		if( $format == JSON ) {
-			return json_encode( $this->data );
-		} else {
-			return $this->data;
-		}
-	}
 	/**
 	 * Retrieve a list of images
 	 */
@@ -114,6 +97,28 @@ class DVFE {
 			return count( $this->last_images );
 		} else {
 			return 0;
+		}
+	}
+
+
+	/**
+	 * FIXME: used in tests only, remove
+	 */
+	public function get_data( $user_login = "", $year = 2010, $month = 9, $format = JSON )
+	{
+		$this->data = array();
+
+		// TODO: add temporal boundaries
+		$this->get_images( $user_login );
+		$this->data['images'] = $this->last_images;
+		$this->data['image_count'] = count( $this->last_images );
+		$this->data['user_login'] = $user_login;
+		$this->data['year'] = $year;
+		$this->data['month'] = $month;
+		if( $format == JSON ) {
+			return json_encode( $this->data );
+		} else {
+			return $this->data;
 		}
 	}
 }

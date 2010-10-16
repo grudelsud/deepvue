@@ -2,7 +2,11 @@
 require_once('load.php');
 
 $dv_globals['action'] = empty($_GET['action']) ? '' : $_GET['action'];
+
+// TODO: switch to session only, easier to handle ajax requests
 $dv_globals['view_elem'] = empty($_GET['view']) ? 0 : $_GET['view'];
+$_SESSION['view_elem'] = $dv_globals['view_elem'];
+
 $dv_globals['view_user'] = empty($_GET['user']) ? $dv_globals['user_login'] : $_GET['user'];
 
 if( !empty( $dv_globals['action'] ) ) {
