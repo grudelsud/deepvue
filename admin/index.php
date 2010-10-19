@@ -19,14 +19,15 @@ $(document).ready(function() {
 	<tr>
 		<th colspan="2">user, event data</th>
 		<th>element data</th>
-		<th>best</th>
+		<th>is new</th>
 		<th>public</th>
 		<th>metric</th>
 		<th>file</th>
 		<th>caption</th>
 	</tr>
 <?php
-$elements = $dvdb->get_elements();
+$elements = $dvdb->get_elements("", "", false);
+echo $dvdb->last_query;
 
 foreach ($elements as $element) {
 	if ( !empty($element->filename) ) {
@@ -42,7 +43,7 @@ foreach ($elements as $element) {
 		<td>S: <?php echo $element->lat_start." ".$element->lon_start." @ ".$element->time_start; ?><br />
 		E: <?php echo $element->lat_end." ".$element->lon_end." @ ".$element->time_end; ?> <br />TZ: <?php echo $element->timezone; ?></td>
 		<td><?php echo $element->lat." ".$element->lon." @ ".$element->created; ?></td>
-		<td><?php echo $element->is_best; ?></td>
+		<td><?php echo $element->is_new; ?></td>
 		<td><?php echo $element->is_public; ?></td>
 		<td><?php echo $element->metric; ?></td>
 		<td><?php if( $print_img ) { ?><a href="<?php echo $img_src; ?>"><img src="<?php echo $img_thumb_src; ?>" /></a><?php } ?></td>

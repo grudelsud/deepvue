@@ -42,6 +42,19 @@ class DVDB {
 	}
 
 	/**
+	 * set public state for a specific element
+	 * 
+	 * @param unknown_type $id_element
+	 * @param unknown_type $is_public
+	 */
+	public function set_public( $id_element = "", $is_public = true ) {
+		global $table_prefix;
+		
+		$tbl_element = $table_prefix."element";
+		$this->update( $table_ev, array( 'is_public' => $is_public ), array( 'id_element' => $id_element ) );
+	}
+
+	/**
 	 * Retrieve list of comments
 	 *
 	 * @param string $id_element
@@ -103,7 +116,7 @@ class DVDB {
 	 * Retrieve list of elements
 	 *
 	 * @param string $user_login
-	 * @return array of element objects with properties: id_element, lat, lon, is_best, is_public, metric, created, filename, ext, caption, user_login, id_event, (*)_start, (*)_end. with (*) = [lat, lon, time]
+	 * @return array of element objects with properties: id_element, lat, lon, notify, is_public, metric, created, filename, ext, caption, user_login, id_event, (*)_start, (*)_end. with (*) = [lat, lon, time]
 	 */
 	public function get_elements( $id_element = "", $user_login = "", $public_only = true, $id = true ) {
 		global $table_prefix;
@@ -112,7 +125,7 @@ class DVDB {
 		$tbl_user = $table_prefix."user";
 		$tbl_event = $table_prefix."event";
 
-		$sql  = "SELECT ".$tbl_elem.".id_element as id_element, ".$tbl_elem.".id_event as id_event, ".$tbl_elem.".lat as lat, ".$tbl_elem.".lon as lon, ".$tbl_elem.".is_best as is_best, ".$tbl_elem.".is_public as is_public, ";
+		$sql  = "SELECT ".$tbl_elem.".id_element as id_element, ".$tbl_elem.".id_event as id_event, ".$tbl_elem.".lat as lat, ".$tbl_elem.".lon as lon, ".$tbl_elem.".is_new as is_new, ".$tbl_elem.".is_public as is_public, ";
 		$sql .= $tbl_elem.".metric as metric, ".$tbl_elem.".created as created, ".$tbl_elem.".filename as filename, ".$tbl_elem.".ext as ext, ".$tbl_elem.".caption as caption, ";
 		$sql .= $tbl_user.".user_login as user_login, ";
 		$sql .= $tbl_event.".lat_start as lat_start, ".$tbl_event.".lon_start as lon_start, ".$tbl_event.".time_start as time_start, ";

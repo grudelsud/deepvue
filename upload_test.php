@@ -24,8 +24,8 @@ require_once('load.php');
 			<td colspan="6">Element</td>
 		</tr>
 		<tr>
-			<td><label for="is_best">is_best</label></td>
-			<td><input name="is_best" type="text" id="is_best" value="1" /></td>
+			<td><label for="is_new">is_new</label></td>
+			<td><input name="is_new" type="text" id="is_new" value="1" /></td>
 			<td><label for="is_public">is_public</label></td>
 			<td><input name="is_public" type="text" id="is_public" value="0" /></td>
 			<td><label for="metric">metric</label></td>
@@ -42,6 +42,8 @@ require_once('load.php');
 		<tr>
 			<td><label for="caption">caption</label></td>
 			<td><input type="text" name="caption" id="caption" /></td>
+			<td><label for="notify">notify</label></td>
+			<td><input name="notify" type="text" id="notify" value="1" /></td>
 			<td><label for="fileContents">fileContents</label></td>
 			<td colspan="3"><input type="file" name="fileContents" id="fileContents" /></td>
 		</tr>

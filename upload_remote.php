@@ -90,7 +90,8 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 			$success = true;
 		}
 
-		$values_elem['is_best'] = $_POST["is_best"]; // => true
+		$values_elem['is_new'] = $_POST["is_new"]; // => true
+		$notify = $_POST["notify"]; // => true
 
 		$lat = $_POST["lat"];
 		$lon = $_POST["lon"];
@@ -124,12 +125,13 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 			$dvdb->insert( $table_el, $values_elem );
 			$msg .= "el_id=".$dvdb->insert_id." -- ";
 			
-			if( isset( $values_elem['is_best']) ) {
+			if( $notify == 1 ) {
 				$oauth_token = $user_result->oauth_token;
 				$oauth_token_secret = $user_result->oauth_secret;
 				$twitteroauth = new TwitterOAuth( CONS_KEY, CONS_SECR, $oauth_token, $oauth_token_secret );
 
-				$parameters['status'] = "[TEST pls ignore] ".$caption." ".date(DATE_RFC822);
+				// TODO: check that parameters are ok
+				$parameters['status'] = "[DV alpha - ".date(DATE_RFC822)."] ".$caption;
 				$parameters['lat'] = $values_elem['lat']; // => 11.111
 				$parameters['long'] = $values_elem['lon']; // => 22.222
 				$parameters['display_coordinates'] = true;

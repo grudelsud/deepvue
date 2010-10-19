@@ -1,7 +1,7 @@
 <?php
 define( 'DEBUG', true );
 
-define( 'SUBPATH', '/deepvue' );
+define( 'SUBPATH', '/dv' );
 define( 'ABSDOMAIN', 'http://'.$_SERVER['SERVER_NAME'].SUBPATH.'/' );
 define( 'ABSPATH', dirname(__FILE__) . '/' );
 define( 'LOG_DIR', ABSPATH.'/logs');
