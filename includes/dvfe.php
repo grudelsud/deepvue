@@ -79,6 +79,7 @@ class DVFE {
 				$img_thumb_src = ABSDOMAIN.UPLOAD_FOLDER."/".$element->filename."-".THUMB_SUFFIX.".".$element->ext;
 				
 				$this->last_images[$index]['id_element'] = $element->id_element;
+				$this->last_images[$index]['is_public'] = $element->is_public;
 				$this->last_images[$index]['name'] = $img_src;
 				$this->last_images[$index]['thumb'] = $img_thumb_src;
 				$index++;

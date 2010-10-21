@@ -51,7 +51,7 @@ class DVDB {
 		global $table_prefix;
 		
 		$tbl_element = $table_prefix."element";
-		$this->update( $table_ev, array( 'is_public' => $is_public ), array( 'id_element' => $id_element ) );
+		$this->update( $tbl_element, array( 'is_public' => $is_public ), array( 'id_element' => $id_element ) );
 	}
 
 	/**

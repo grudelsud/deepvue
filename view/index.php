@@ -24,11 +24,22 @@ if( get_dv_globals('action') == 'profile' ) {
 
 	// SINGLE IMAGE
 	} else {
+		
+		// FIXME: orrendo spreco di variabili inutili, non lo posso vedereeeee! controllare
 		$images = $dvfe->get_images( $view_elem, $view_user, $public_only, 'OBJECT' );
 		$image = $images[0];
+		$check_status = $image['is_public'] ? "checked=\"checked\"" : "";
 		?><img src="<?php echo $image['name'] ?>"/><?php 		
 
 ?>
+<form id="setpublic" name="setpublic" method="post" action="ajax_fe.php">
+	<input name="action" type="hidden" value="setpublic" />
+	<input name="id_element" type="hidden" value="<?php echo $image['id_element']; ?>" />
+	<input name="public" type="checkbox" id="public" <?php echo $check_status; ?> />
+	<input name="public" type="hidden" value="<?php echo $image['is_public']; ?>" />
+	<label for="public">public</label>
+</form>
+
 	<form id="addcomment" name="addcomment" method="post" action="">
 	<p>
 	<label for="comment_content">comment</label>

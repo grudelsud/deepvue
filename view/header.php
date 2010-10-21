@@ -40,6 +40,9 @@ $(document).ready(function() {
 		e.preventDefault();
 		addComment();
 	});
+	$("#setpublic #public").click( function(e) {
+		$("#setpublic").submit();
+	});
 });
 </script>
 </head>
