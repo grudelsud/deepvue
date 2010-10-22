@@ -3,10 +3,12 @@
 require_once('../load.php');
 
 
-$latm=0;
-$lonm=0;
+$latm=100000;
+$lonm=100000;
 
-$elements = $dvdb->get_elements();
+$VICINO=100;
+
+$elements = $dvdb->get_elements("", "", false);
 
 $count=0;
 $messi=0;
@@ -51,7 +53,7 @@ foreach ($elements as $element)
 	}
 			
 	$tc=strtotime($element->created." GMT");
-	$tc+=$element->timezone*3600;				  // per tagliare bene le giornate sia a firenze che a cali
+	$tc+=$element->timezone*3600;				  // per tagliare bene le giornate ovunque nel mondo
 	$tc-=3600;									  // una ora indietro per far tornare le cose alle 3.30 del mattino nel giorno prima e le cose alle 4.30 del mattino nel giorno stesso (dopo)
 
 	
@@ -112,27 +114,14 @@ foreach ($elements as $element)
 		$besthashname = $hashname;
 		$bestmetric = $element->metric;
 		
-		
-		if ($lat > 27)	//florence
-		{
-			$latm=111131.745;
-			$lonm=78846.80572069259;
-		}
-		else			//cali
-		{
-			$latm=110577.31;
-			$lonm=111167.92;
-		}
-		
-		
-		$place = "";//alex_find_place( "liquene", $element->lat_start, $element->lon_start );
+		$place = "";
 		$places = $dvdb->get_places();
 		foreach ($places as $plac) 
 		{
 			$dlatm = ($element->lat_start - $plac->lat)*$latm;
 			$dlonm = ($element->lon_start - $plac->lon)*$lonm;
 			$distanza = round(sqrt($dlatm*$dlatm+$dlonm*$dlonm));
-			if ( $distanza < 80 )
+			if ( $distanza < $VICINO )
 			{
 				$place = $plac->text;
 				break;
@@ -147,7 +136,7 @@ foreach ($elements as $element)
 				$dlatm = ($element->lat - $plac->lat)*$latm;				
 				$dlonm = ($element->lon - $plac->lon)*$lonm;
 				$distanza = round(sqrt($dlatm*$dlatm+$dlonm*$dlonm));
-				if ( $distanza < 80 )
+				if ( $distanza < $VICINO )
 				{
 					$place = $plac->text;
 					break;

@@ -1,5 +1,5 @@
 <?php
-define( 'DEBUG', true );
+define( 'DEBUG', false );
 
 define( 'SUBPATH', '/dv' );
 define( 'ABSDOMAIN', 'http://'.$_SERVER['SERVER_NAME'].SUBPATH.'/' );
@@ -40,6 +40,16 @@ if( preg_match('/londondroids/', $_SERVER['SERVER_NAME']) ) {
 	define('DB_PASSWORD', 'd3vDr01dDV');
 	/** MySQL hostname */
 	define('DB_HOST', 'devdroiddv.db.6122217.hostedresource.com');
+} else if( preg_match('/deepvue.com/', $_SERVER['SERVER_NAME']) ) {
+	// ** MySQL settings - You can get this info from your web host ** //
+	/** The name of the database for DV */
+	define('DB_NAME', 'deepvue_com_dv');
+	/** MySQL database username */
+	define('DB_USER', 'pesaur10_');
+	/** MySQL database password */
+	define('DB_PASSWORD', 'devdroiddv');
+	/** MySQL hostname */
+	define('DB_HOST', '89.31.72.132');
 } else {
 	// ** MySQL settings - You can get this info from your web host ** //
 	/** The name of the database for DV */

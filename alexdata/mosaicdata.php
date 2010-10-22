@@ -2,7 +2,7 @@
 
 require_once('../load.php');
 
-$elements = $dvdb->get_elements();
+$elements = $dvdb->get_elements("", "", false);
 
 $count=0;
 $messi=0;
@@ -40,7 +40,7 @@ foreach ($elements as $element)
 			
 	$tc=strtotime($element->created." GMT");
 	
-  if ( ($count>463) && ($messi < 200) && ($mettilo) )
+  if ( ($count>1000) && ($messi < 200) && ($mettilo) )
   {	
 	
 	$old_event = $element->id_event;

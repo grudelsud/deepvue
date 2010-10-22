@@ -3,7 +3,7 @@
  * @file
  * Clears PHP sessions and redirects to the index page.
  */
-define( 'SUBPATH', '/deepvue' );
+define( 'SUBPATH', '/dv' );
 define( 'ABSDOMAIN', 'http://'.$_SERVER['SERVER_NAME'].SUBPATH.'/' );
 
 require_once('includes/functions.php');

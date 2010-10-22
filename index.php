@@ -1,4 +1,5 @@
 <?php
+require_once('shit/functions_removed.php');
 require_once('load.php');
 
 $dv_globals['action'] = empty($_GET['action']) ? '' : $_GET['action'];

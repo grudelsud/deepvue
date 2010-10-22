@@ -1,28 +1,12 @@
 <?php
 
-$latm=0;
-$lonm=0;
-
-
-function alex_find_place( $id_user, $lat, $lon ) 
-{
-	$places = $dvdb->get_places();
-	foreach ($places as $plac) 
-	{
-		$dlatm = ($lat - $plac->lat)*$latm;
-		$dlonm = ($lon - $plac->lon)*$lonm;
-		$distanza = round(sqrt($dlatm*$dlatm+$dlonm*$dlonm));
-		if ( $distanza < 80 )
-		{
-			return $plac->text;
-		}
-	}
-	return "";
-}
+$latm=100000;
+$lonm=100000;
+$VICINO=100;
 
 require_once('../load.php');
 
-$elements = $dvdb->get_elements();
+$elements = $dvdb->get_elements("", "", false);
 
 $count=0;
 $messi=0;
@@ -44,8 +28,9 @@ echo "var captionstring=new Array(100);";
 echo "var distancestring=new Array(100);";
 echo "var periodstring=new Array(100);";
 echo "var mapzoom=new Array(100);";
-
-
+echo "var namedplace=new Array(100);";
+echo "var idelement=new Array(100);";
+echo "var ispublic=new Array(100);";
 
 $first = $_GET["first"];
 
@@ -66,7 +51,7 @@ foreach ($elements as $element)
 	
 	$diverso = 0;
 	
-	if ( ($element->is_best) && ($element->has_photos==0) && ($element->id_event!=$old_event) )
+	if ( ($element->is_new) && ($element->has_photos==0) && ($element->id_event!=$old_event) )
 	{
 		$mettilo = true;
 	}	
@@ -78,7 +63,7 @@ foreach ($elements as $element)
 
 
 	$tc=strtotime($element->created." GMT");
-	$tc+=$element->timezone*3600;				  // per tagliare bene le giornate sia a firenze che a cali
+	$tc+=$element->timezone*3600;				  // per tagliare bene le giornate ovunque nel mondo
 	$tc-=3600;									  // una ora indietro per far tornare le cose alle 3.30 del mattino nel giorno prima e le cose alle 4.30 del mattino nel giorno stesso (dopo)
 	
   if ( ($tc>=$first) && ($tc<($first+86400)) && ( strcmp($element->user_login,"liquene") == 0 ) && ($messi < 100) && ($mettilo) )
@@ -86,6 +71,8 @@ foreach ($elements as $element)
 	
 	$old_event = $element->id_event;
 	
+	echo "ispublic[".$messi."]=".$element->is_public.";   ";
+	echo "idelement[".$messi."]=".$element->id_element.";   ";
 	echo "cesura[".$messi."]=".$diverso.";   ";
 
 
@@ -156,61 +143,43 @@ foreach ($elements as $element)
 		echo "mapfoto[".$messi."]=new google.maps.LatLng(666,666);   ";
 	}	
 	echo "hash[".$messi.']="'.$hashname.'";   ';
-	
-	
-	//$place = $element->place;
-	//$place_start = $element->place_start;
-	//$place_end = $element->place_end;
-	
-	
-	if ($element->lat > 27)	//florence
-	{
-		$latm=111131.745;
-		$lonm=78846.80572069259;
-	}
-	else			//cali
-	{
-		$latm=110577.31;
-		$lonm=111167.92;
-	}
-	
-	
-	$place = "";//alex_find_place( "liquene", $element->lat, $element->lon );
+		
+	$place = "";
 	$places = $dvdb->get_places();
 	foreach ($places as $plac) 
 	{
 		$dlatm = ($element->lat - $plac->lat)*$latm;
 		$dlonm = ($element->lon - $plac->lon)*$lonm;
 		$distanza = round(sqrt($dlatm*$dlatm+$dlonm*$dlonm));
-		if ( $distanza < 80 )
+		if ( $distanza < $VICINO )
 		{
 			$place = $plac->text;
 			break;
 		}
 	}
 	
-	$place_start = "";//= alex_find_place( "liquene", $element->lat_start, $element->lon_start );
+	$place_start = "";
 	$places = $dvdb->get_places();
 	foreach ($places as $plac) 
 	{
 		$dlatm = ($element->lat_start - $plac->lat)*$latm;
 		$dlonm = ($element->lon_start - $plac->lon)*$lonm;
 		$distanza = round(sqrt($dlatm*$dlatm+$dlonm*$dlonm));
-		if ( $distanza < 80 )
+		if ( $distanza < $VICINO )
 		{
 			$place_start = $plac->text;
 			break;
 		}
 	}
 	
-	$place_end = "";//= alex_find_place( "liquene", $element->lat_end, $element->lon_end );	
+	$place_end = "";
 	$places = $dvdb->get_places();
 	foreach ($places as $plac) 
 	{
 		$dlatm = ($element->lat_end - $plac->lat)*$latm;
 		$dlonm = ($element->lon_end - $plac->lon)*$lonm;
 		$distanza = round(sqrt($dlatm*$dlatm+$dlonm*$dlonm));
-		if ( $distanza < 80 )
+		if ( $distanza < $VICINO )
 		{
 			$place_end = $plac->text;
 			break;
@@ -317,8 +286,12 @@ foreach ($elements as $element)
 	
 	if ( $mtype==0 )		//stay
 	{
+		
 		if( $place_start != "" )
 		{
+		
+			echo "namedplace[".$messi.']=1;   ';
+
 			if ( strcmp($place_start,$place)==0 )		//intendo eguaglianza di testo, non di puntatore
 			{
 				$azione= $azione."staying there";
@@ -331,11 +304,24 @@ foreach ($elements as $element)
 		}
 		else
 		{
+			
+			echo "namedplace[".$messi.']=0;   ';
+			
 			$azione= $azione."staying there for ";
 		}
 	}
 	else		//move
-	{
+	{	
+		
+		if ( $place != "" )
+		{	
+			echo "namedplace[".$messi.']=1;   ';		
+		}
+		else
+		{
+			echo "namedplace[".$messi.']=0;   ';		
+		}			
+		
 		if( $place_start != "")
 		{
 			if( $place_end != "")
@@ -344,6 +330,8 @@ foreach ($elements as $element)
 				{
 					if ( $place != "" )
 					{	
+					
+
 						$azione= $azione."while ";
 						if ( strcmp($place_start,$place)==0 )
 						{
@@ -362,7 +350,7 @@ foreach ($elements as $element)
 					if ( $place != "" )
 					{
 						$azione =$azione."while ";
-					}
+					}					
 					if ( strcmp($place_start,$place)==0 )
 					{
 						$azione =$azione."moving around there for ";

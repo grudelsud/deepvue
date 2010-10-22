@@ -47,7 +47,7 @@ class DVDB {
 	 * @param unknown_type $id_element
 	 * @param unknown_type $is_public
 	 */
-	public function set_public( $id_element = "", $is_public = true ) {
+	public function set_public( $id_element = "", $is_public = 1 ) {
 		global $table_prefix;
 		
 		$tbl_element = $table_prefix."element";
@@ -146,6 +146,29 @@ class DVDB {
 		
 		$sql .= "ORDER BY ".$tbl_elem.".id_user, ".$tbl_elem.".id_event, created ASC;";
 		
+		$this->query( $sql );
+		if( $this->num_rows > 0 ) {
+			return $this->last_result;
+		} else {
+			return new stdClass();
+		}
+	}
+
+	/**
+	 * Retrieve list of users
+	 *
+	 */
+	public function get_users( $id_user = "" ) {
+		global $table_prefix;
+
+		$tbl_user = $table_prefix."user";
+
+		$sql  = "SELECT * FROM ".$tbl_user;
+		
+		if( !empty( $id_user ) ) {
+			$sql .= " WHERE id_user=".$id_user;
+		}
+
 		$this->query( $sql );
 		if( $this->num_rows > 0 ) {
 			return $this->last_result;

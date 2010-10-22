@@ -6,7 +6,7 @@ $msg = $now." -- ";
 
 $action = empty( $_REQUEST['action'] ) ? "" : $_REQUEST['action'];
 // $msg .= "session: ". print_r( $_SESSION, true ) . " -- ";
-$msg .= "post: ". print_r( $_POST, true ) . " -- ";
+// $msg .= "post: ". print_r( $_POST, true ) . " -- ";
 $msg .= "action: ".$action." -- ";
 
 $resp = json_encode( array('status' => 'ok') );
@@ -47,6 +47,7 @@ if( $action == "read" ) {
 	 */
 	$is_public = !$_POST['public'];
 	$dvdb->set_public( $_POST['id_element'], $is_public );
+	$msg .= "set is_public=".$is_public." id_element=".$_POST['id_element']." -- ";
 	header( 'Location: '.ABSDOMAIN.'index.php?view='.$_POST['id_element'] );
 }
 

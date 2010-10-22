@@ -25,6 +25,7 @@ if( !empty($_REQUEST['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !
 		if( empty($result) ) {
 			$dvdb->insert( $table, array('oauth_id' => $user_info->id, 'oauth_token' => $access_token['oauth_token'], 'oauth_secret' => $access_token['oauth_token_secret'], 'user_login' => $user_info->screen_name));
 			$result = $dvdb->get_row( "SELECT * FROM ".$table." WHERE id_user = ".$dvdb->insert_id );
+			mail( "thomasalisi@gmail.com", "[deepVue] new user", "new user ".print_r( $result, true ) );
 		} else {
 		// Update the tokens
 			$dvdb->update( $table, array('oauth_token' => $access_token['oauth_token'], 'oauth_secret' => $access_token['oauth_token_secret']), array('oauth_id' => $user_info->id) );

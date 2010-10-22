@@ -1,5 +1,13 @@
 <?php
 
+function send_authcode( $login, $auth, $email ) {
+	$message  = "Hello ".$login."\n\n";
+	$message .= "you can start using deepVue from your mobile phone using the following authorization code: ".$auth."\n\n";
+	$message .= "hope to see you online soon.\n\n- DeepVue\n";
+	
+	mail( $email, "[welcome to DeepVue alpha] auth code", $message );
+}
+
 function log_req( $msg, $file_name = 'default.log' ) {
 	if ( DEBUG ) {
 		$handler = fopen( LOG_DIR."/".$file_name, "a+" );
@@ -18,58 +26,6 @@ function logout()
 	session_destroy();
 }
 
-// returns informations regarding directories, theme and related
-function siteinfo( $value )
-{
-	global $dvfe;
-	if( 'theme_dir' == $value ) {
-		echo $dvfe->get_theme_directory();
-	}
-}
-
-function set_dv_globals() {
-	global $dv_globals;
-
-	// first run of the application in this session
-	if( !isset( $_SESSION['running'] )) {
-		foreach( $_COOKIE as $key => $value ) {
-			$dv_globals[ $key ] = $value;
-			$_SESSION[ $key ] = $value;
-		}
-	} else {
-		foreach( $_SESSION as $key => $value ) {
-			$dv_globals[ $key ] = $value;
-		}
-	}
-
-	if( isset( $dv_globals['oauth_id'] ) ) {
-		$user_result = chk_credentials( "oauth_id", $dv_globals['oauth_id'] );
-	}
-
-	if( !empty( $user_result ) ) {
-		$_SESSION['running'] = true;
-
-		// authenticated on twitter, allowed to browse and register
-		$dv_globals['user_auth'] = true;
-
-		if( empty( $user_result->user_email ) ) {
-			$dv_globals['user_reg'] = false;
-		} else {
-			// authenticated and registered, allowed to browse and post
-			$dv_globals['user_reg'] = true;
-		}
-	} else {
-		// authenticated on twitter, allowed to browse and register
-		$dv_globals['user_auth'] = false;
-		// authenticated and registered, allowed to browse and post
-		$dv_globals['user_reg'] = false;
-	}
-}
-
-function get_dv_globals( $param ) {
-	global $dv_globals;
-	return $dv_globals[ $param ];
-}
 
 function move_uploaded( $fileField, $chkValidImage = true, $fileName = CONS_EMPTY, $dir = UPLOAD_DIR ) {
 	if ($_FILES[$fileField]["error"] == UPLOAD_ERR_OK) {
@@ -119,8 +75,29 @@ function find_place( $id_user, $lat, $lon ) {
 
 	global $dvdb;
 	$radius = 80;
-	$latm = 111000;
-	$lonm = 111000;
+	$latm = 111110;
+	$lonm = 111110;
+	
+	/*
+	/////////////////////////////////
+	// Convert latitude to radians
+	$lat = $latdeg*(2.0 * pi())/360.0;
+	// Set up "Constants"
+	$m1 = 111132.92;  // latitude calculation term 1
+	$m2 = -559.82;  // latitude calculation term 2
+	$m3 = 1.175;   // latitude calculation term 3
+	$m4 = -0.0023;  // latitude calculation term 4
+	$p1 = 111412.84;  // longitude calculation term 1
+	$p2 = -93.5;   // longitude calculation term 2
+	$p3 = 0.118;   // longitude calculation term 3
+	// Calculate the length of a degree of latitude and longitude in meters
+	latm = m1 + (m2 * Math.cos(2 * lat)) + (m3 * Math.cos(4 * lat)) + (m4 * Math.cos(6 * lat));
+	lonm = (p1 * Math.cos(lat)) + (p2 * Math.cos(3 * lat)) + (p3 * Math.cos(5 * lat));
+	/////////////////////////////////
+	
+	$fact = $lonm / $latm;
+	*/
+	
 	$places = $dvdb->get_places( $id_user );
 
 	foreach ($places as $place) {
@@ -392,6 +369,62 @@ function image_resize( $file, $max_w, $max_h, $crop = false, $suffix = null, $de
 	@ chmod( $destfilename, $perms );
 
 	return $destfilename;
+}
+
+
+// FIXME: REMOOOOVE! from this point on, it's total crap and bad scaffholding
+
+// returns informations regarding directories, theme and related
+function siteinfo( $value )
+{
+	global $dvfe;
+	if( 'theme_dir' == $value ) {
+		echo $dvfe->get_theme_directory();
+	}
+}
+
+function set_dv_globals() {
+	global $dv_globals;
+
+	// first run of the application in this session
+	if( !isset( $_SESSION['running'] )) {
+		foreach( $_COOKIE as $key => $value ) {
+			$dv_globals[ $key ] = $value;
+			$_SESSION[ $key ] = $value;
+		}
+	} else {
+		foreach( $_SESSION as $key => $value ) {
+			$dv_globals[ $key ] = $value;
+		}
+	}
+
+	if( isset( $dv_globals['oauth_id'] ) ) {
+		$user_result = chk_credentials( "oauth_id", $dv_globals['oauth_id'] );
+	}
+
+	if( !empty( $user_result ) ) {
+		$_SESSION['running'] = true;
+
+		// authenticated on twitter, allowed to browse and register
+		$dv_globals['user_auth'] = true;
+
+		if( empty( $user_result->user_email ) ) {
+			$dv_globals['user_reg'] = false;
+		} else {
+			// authenticated and registered, allowed to browse and post
+			$dv_globals['user_reg'] = true;
+		}
+	} else {
+		// authenticated on twitter, allowed to browse and register
+		$dv_globals['user_auth'] = false;
+		// authenticated and registered, allowed to browse and post
+		$dv_globals['user_reg'] = false;
+	}
+}
+
+function get_dv_globals( $param ) {
+	global $dv_globals;
+	return $dv_globals[ $param ];
 }
 
 ?>

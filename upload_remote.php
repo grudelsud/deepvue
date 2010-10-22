@@ -130,8 +130,15 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 				$oauth_token_secret = $user_result->oauth_secret;
 				$twitteroauth = new TwitterOAuth( CONS_KEY, CONS_SECR, $oauth_token, $oauth_token_secret );
 
-				// TODO: check that parameters are ok
-				$parameters['status'] = "[DV alpha - ".date(DATE_RFC822)."] ".$caption;
+				$status_update = "[DV alpha - ".date(DATE_RFC822)."] ".$caption;
+				
+				// TODO: make it smarter! it links to the ugly image without anything around it, and should contain a shortened url
+				if( $has_photo ) {
+					$image_url = ABSDOMAIN.UPLOAD_FOLDER."/".$values_elem['filename'].".".$values_elem['ext'];
+					$status_update .= " ".$image_url;
+				}
+				
+				$parameters['status']  = $status_update;
 				$parameters['lat'] = $values_elem['lat']; // => 11.111
 				$parameters['long'] = $values_elem['lon']; // => 22.222
 				$parameters['display_coordinates'] = true;
