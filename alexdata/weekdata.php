@@ -19,8 +19,16 @@ echo "var photos = new Array(200);";
 echo "var numgiorno =new Array(200);";
 echo "var hash=new Array(200);";
 echo "var timestring=new Array(200);";
-//echo "var captionstring=new Array(200);";
+echo "var ispublic=new Array(200);";
 echo "var datestring=new Array(200);";
+	
+$owner = $_GET["owner"];
+
+$username = $_GET["user"];
+if ( $username == 0 )
+{
+	$username = "liquene";
+}
 
 $first = $_GET["first"];
 
@@ -37,8 +45,10 @@ foreach ($elements as $element)
 
 	if ( !empty($element->filename) ) {
 		$print_img = true;
+		$ispub = $element->is_public;
 		$hashname=$element->filename;
 	} else {
+		$ispub = $element->is_public;
 		$print_img = false;
 		$hashname="null";
 	}
@@ -68,8 +78,12 @@ foreach ($elements as $element)
 		$mtype=0;	//stay
 	}
 	
+	if ($owner==-1 && $element->is_public==0)
+	{
+		$mettilo=0;
+	}
 	
-  if ( ($tc>=$first-86400*3) && ($tc<($first+86400*4)) && ( strcmp($element->user_login,"liquene") == 0 ) && ($messi < 100) && ($mettilo) && ($durata>1800) &&($mtype==0) )
+  if ( ($tc>=$first-86400*3) && ($tc<($first+86400*4)) && ( strcmp($element->user_login,$username) == 0 ) && ($messi < 100) && ($mettilo) && ($durata>1800) &&($mtype==0) )
   {	
 	
 	$old_event = $element->id_event;
@@ -91,6 +105,7 @@ foreach ($elements as $element)
 		}
 		else
 		{
+			echo "ispublic[".$messi."]=".$bestispublic.";   ";
 			echo "datestring[".$messi.']="'.$bestgiorno.'";';
 			echo "numgiorno[".$messi.']="'.$giornate.'";';
 			echo "timestring[".$messi.']="'.$bestora." ".$place.'";';
@@ -112,6 +127,7 @@ foreach ($elements as $element)
 		$bestgiorno = $giorno;
 		$bestora = $ora;
 		$besthashname = $hashname;
+		$bestispublic = $ispub;
 		$bestmetric = $element->metric;
 		
 		$place = "";
@@ -152,6 +168,8 @@ foreach ($elements as $element)
 
 
 
+		echo "ispublic[".$messi."]=".$bestispublic.";   ";
+			
 		echo "datestring[".$messi.']="'.$bestgiorno.'";';
 		echo "numgiorno[".$messi.']="'.$giornate.'";';
 		echo "timestring[".$messi.']="'.$bestora." ".$place.'";';

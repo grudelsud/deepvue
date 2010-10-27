@@ -11,6 +11,8 @@ $elements = $dvdb->get_elements("", "", false);
 $count=0;
 $messi=0;
 
+echo "var debugtime = new Array(100);";
+
 echo "var cesura = new Array(100);";
 echo "var photos = new Array(100);";
 echo "var thumbtexts = new Array(100);";
@@ -31,6 +33,14 @@ echo "var mapzoom=new Array(100);";
 echo "var namedplace=new Array(100);";
 echo "var idelement=new Array(100);";
 echo "var ispublic=new Array(100);";
+
+$owner = $_GET["owner"];
+
+$username = $_GET["user"];
+if ( $username == 0 )
+{
+	$username = "liquene";
+}
 
 $first = $_GET["first"];
 
@@ -66,7 +76,12 @@ foreach ($elements as $element)
 	$tc+=$element->timezone*3600;				  // per tagliare bene le giornate ovunque nel mondo
 	$tc-=3600;									  // una ora indietro per far tornare le cose alle 3.30 del mattino nel giorno prima e le cose alle 4.30 del mattino nel giorno stesso (dopo)
 	
-  if ( ($tc>=$first) && ($tc<($first+86400)) && ( strcmp($element->user_login,"liquene") == 0 ) && ($messi < 100) && ($mettilo) )
+	if ($owner==-1 && $element->is_public==0)
+	{
+		$mettilo=0;
+	}
+	
+  if ( ($tc>=$first) && ($tc<($first+86400)) && ( strcmp($element->user_login,$username) == 0 ) && ($messi < 100) && ($mettilo) )
   {	
 	
 	$old_event = $element->id_event;
@@ -89,7 +104,11 @@ foreach ($elements as $element)
 	echo "mapend[".$messi."]=new google.maps.LatLng(".$element->lat_end.",".$element->lon_end.");   ";
 	
 	$utcode = strtotime($element->created." GMT");
-	$utcode+=$element->timezone*3600;			
+	$utcode+=$element->timezone*3600;	
+	
+	echo "debugtime[".$messi."]=".$utcode.";   ";
+	
+			
 	$giorno = gmdate("F jS, Y", $utcode);
 	
 	echo "datestring[".$messi.']="'.$giorno.'";   ';  //"November 23rd, 2010"

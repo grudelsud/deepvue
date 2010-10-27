@@ -108,7 +108,11 @@ class DVDB {
 		$tbl_comment = $table_prefix."comment";
 		
 		// TODO: add logic! should add comment only if public, check DATE not working
-		$comment_values = array( "id_element" => $id_element, "id_user" => $id_user, "comment_status" => $comment_status, "comment_content" => $comment_content, "created" => date( 'r' ) );
+		$comment_values["id_element"] = $id_element;
+		$comment_values["id_user"] = $id_user; 
+		$comment_values["comment_status"] = $comment_status;
+		$comment_values["comment_content"] = $comment_content; 
+		$comment_values["created"] = date( "c" );
 		$this->insert( $tbl_comment, $comment_values );
 	}
 
@@ -175,6 +179,14 @@ class DVDB {
 		} else {
 			return new stdClass();
 		}
+	}
+
+	public function del_place( $lat, $lon ) {
+		global $table_prefix;
+		$tbl_place = $table_prefix."place";
+
+		$sql = "DELETE FROM ".$tbl_place." WHERE lat=".$lat." AND lon=".$lon.";";
+		return $this->query( $sql );
 	}
 
 	/**

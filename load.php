@@ -2,7 +2,8 @@
 define( 'DEBUG', false );
 
 define( 'SUBPATH', '/dv' );
-define( 'ABSDOMAIN', 'http://'.$_SERVER['SERVER_NAME'].SUBPATH.'/' );
+define( 'SERVER', 'http://'.$_SERVER['SERVER_NAME'] );
+define( 'ABSDOMAIN', SERVER.SUBPATH.'/' );
 define( 'ABSPATH', dirname(__FILE__) . '/' );
 define( 'LOG_DIR', ABSPATH.'/logs');
 define( 'UPLOAD_FOLDER', 'contents');
@@ -43,7 +44,7 @@ if( preg_match('/londondroids/', $_SERVER['SERVER_NAME']) ) {
 } else if( preg_match('/deepvue.com/', $_SERVER['SERVER_NAME']) ) {
 	// ** MySQL settings - You can get this info from your web host ** //
 	/** The name of the database for DV */
-	define('DB_NAME', 'deepvue_com_dv');
+	define('DB_NAME', 'deepvue_com_dva');
 	/** MySQL database username */
 	define('DB_USER', 'pesaur10_');
 	/** MySQL database password */
@@ -66,6 +67,17 @@ require_once( INC.'/functions.php');
 require_once( INC.'/dvdb.php');
 require_once( INC.'/dvfe.php');
 require_once( INC.'/twitteroauth/twitteroauth/twitteroauth.php');
+
+/**
+ * EPITWITTER STUFF ADDED FOR CRAPPY HOSTINGSOLUTION
+ * 
+ */
+define( 'CONS_PRKEY', 'AobKzamSYsaVA3rKAHLgQ');
+define( 'CONS_PRSECR', 'YQmSZJaMfuH1hybhKMjPX7fBEa7LKIc7ZuhUjry834');
+
+require_once( INC.'/epitwitter/EpiCurl.php');
+require_once( INC.'/epitwitter/EpiOAuth.php');
+require_once( INC.'/epitwitter/EpiTwitter.php');
 
 $table_prefix  = 'dv_';
 $dvdb = new DVDB( DB_USER, DB_PASSWORD, DB_NAME, DB_HOST );

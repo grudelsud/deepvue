@@ -22,6 +22,10 @@ is restricted to registered twitter user only. add DATE for comments!
 
 - db, check tables element, event, comment: implement TIMEZONE for elements and start/end event
 
+# Next steps
+
+- give images a decent name in order to simplify merge/diff of folders
+
 ## References
 
 ### General libraries

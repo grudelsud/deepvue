@@ -15,6 +15,7 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 	if( !empty( $user_result ) ) {
 
 		$id_user = $user_result->id_user;
+		$user_login = $user_result->user_login;
 		$msg .= "uid=".$id_user." -- ";
 		
 		$table_el = $table_prefix."element";
@@ -115,6 +116,9 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 		
 		$values_elem['is_public'] = $_POST["is_public"]; // => true
 		$elem_time = $_POST["time"];
+		list( $el_time, $el_timezone ) = explode( "GMT", $elem_time );
+		$time_stamp = strtotime( $el_time );
+
 		$values_elem['created'] = $elem_time; // => 2010-08-08 14:14:14 +0200
 		$msg .= "t=".$elem_time." -- ";
 		// modified + device_version missing here
@@ -130,19 +134,20 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 				$oauth_token_secret = $user_result->oauth_secret;
 				$twitteroauth = new TwitterOAuth( CONS_KEY, CONS_SECR, $oauth_token, $oauth_token_secret );
 
-				$status_update = "[DV alpha - ".date(DATE_RFC822)."] ".$caption;
+				$status_update = "#DVa ".$caption." ";
 				
 				// TODO: make it smarter! it links to the ugly image without anything around it, and should contain a shortened url
 				if( $has_photo ) {
-					$image_url = ABSDOMAIN.UPLOAD_FOLDER."/".$values_elem['filename'].".".$values_elem['ext'];
+					$image_url = SERVER."/alpha/?time=".$time_stamp."&image=".$values_elem['filename']."&user=".$user_login;
 					$status_update .= " ".$image_url;
 				}
-				
+				$msg .= "tweet: ".$status_update." -- ";
 				$parameters['status']  = $status_update;
 				$parameters['lat'] = $values_elem['lat']; // => 11.111
 				$parameters['long'] = $values_elem['lon']; // => 22.222
 				$parameters['display_coordinates'] = true;
 				$status = $twitteroauth->post('statuses/update', $parameters);
+				// $msg .= "twstat: ".print_r( $status, true )." -- ";
 			}
 			
 			if( $has_photo ) {

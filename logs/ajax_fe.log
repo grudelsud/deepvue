@@ -69,3 +69,241 @@
 2010-10-16T20:59:26+01:00 -- action: read -- q: SELECT dv_comment.id_comment as id_comment, dv_comment.id_element as id_element, dv_comment.id_user as id_user, dv_user.user_login as user_login, dv_comment.user_email as user_email, dv_comment.comment_status as comment_status, dv_comment.comment_content as comment_content, dv_comment.created as created FROM dv_comment, dv_user WHERE dv_comment.id_user = dv_user.id_user AND dv_comment.id_element=2 ORDER BY dv_comment.id_comment ASC; -- [{"id_comment":"1","id_element":"2","id_user":"2","user_login":"grudelsud","user_email":null,"comment_status":"ACCEPTED","comment_content":"puppo","created":"0000-00-00 00:00:00"}]
 2010-10-16T20:59:26+01:00 -- action: create -- content: gnagno -- 
 2010-10-16T21:01:03+01:00 -- action: read -- [{"id_comment":"1","id_element":"2","id_user":"2","user_login":"grudelsud","user_email":null,"comment_status":"ACCEPTED","comment_content":"puppo","created":"0000-00-00 00:00:00"},{"id_comment":"2","id_element":"2","id_user":"2","user_login":"grudelsud","user_email":null,"comment_status":"ACCEPTED","comment_content":"gnagno","created":"0000-00-00 00:00:00"}]
+2010-10-19T09:55:43+01:00 -- action: read -- {}
+2010-10-19T09:55:47+01:00 -- action: read -- {}
+2010-10-19T09:55:53+01:00 -- action: read -- {}
+2010-10-19T09:55:55+01:00 -- action: read -- {}
+2010-10-19T09:56:00+01:00 -- action: read -- {}
+2010-10-19T09:56:02+01:00 -- action: read -- [{"id_comment":"1","id_element":"2","id_user":"2","user_login":"grudelsud","user_email":null,"comment_status":"ACCEPTED","comment_content":"puppo","created":"0000-00-00 00:00:00"},{"id_comment":"2","id_element":"2","id_user":"2","user_login":"grudelsud","user_email":null,"comment_status":"ACCEPTED","comment_content":"gnagno","created":"0000-00-00 00:00:00"}]
+2010-10-21T11:54:53+01:00 -- action: read -- {}
+2010-10-21T12:36:08+01:00 -- action: read -- {}
+2010-10-21T12:36:22+01:00 -- action: read -- {}
+2010-10-21T12:53:28+01:00 -- action: read -- {}
+2010-10-21T12:55:07+01:00 -- action: read -- {}
+2010-10-21T13:04:36+01:00 -- action: read -- {}
+2010-10-21T13:04:52+01:00 -- action: read -- {}
+2010-10-21T13:05:19+01:00 -- action: read -- {}
+2010-10-21T13:06:55+01:00 -- action: read -- {}
+2010-10-21T13:07:26+01:00 -- action: read -- {}
+2010-10-21T13:08:13+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-21T13:09:36+01:00 -- post: Array
+(
+    [action] => read
+    [SESS6ec0f22a0d98dfcb1576c8403171983e] => eb71015332c882d4fe2b21e690f59980
+    [PHPSESSID] => acb7719030357cf3ba004e94973a87f3
+    [view_elem] => 0
+    [oauth_token] => 36017645-Xju5mwqzuGPdWtgwkadBQHcINtoxKs9MdbJBZpd2G
+    [oauth_token_secret] => a3tjm4Y6ZNFWvRbMpqHDisQi6Md0r9cZ1lGwFhZnHyQ
+    [user_id] => 2
+    [user_login] => grudelsud
+    [oauth_id] => 36017645
+)
+ -- action: read -- {}
+2010-10-21T13:09:40+01:00 -- post: Array
+(
+    [action] => setpublic
+    [id] => 1185
+    [SESS6ec0f22a0d98dfcb1576c8403171983e] => eb71015332c882d4fe2b21e690f59980
+    [PHPSESSID] => acb7719030357cf3ba004e94973a87f3
+    [view_elem] => 0
+    [oauth_token] => 36017645-Xju5mwqzuGPdWtgwkadBQHcINtoxKs9MdbJBZpd2G
+    [oauth_token_secret] => a3tjm4Y6ZNFWvRbMpqHDisQi6Md0r9cZ1lGwFhZnHyQ
+    [user_id] => 2
+    [user_login] => grudelsud
+    [oauth_id] => 36017645
+)
+ -- action: setpublic -- 
+2010-10-21T13:13:04+01:00 -- post: Array
+(
+    [action] => read
+    [SESS6ec0f22a0d98dfcb1576c8403171983e] => eb71015332c882d4fe2b21e690f59980
+    [PHPSESSID] => acb7719030357cf3ba004e94973a87f3
+    [view_elem] => 0
+    [oauth_token] => 36017645-Xju5mwqzuGPdWtgwkadBQHcINtoxKs9MdbJBZpd2G
+    [oauth_token_secret] => a3tjm4Y6ZNFWvRbMpqHDisQi6Md0r9cZ1lGwFhZnHyQ
+    [user_id] => 2
+    [user_login] => grudelsud
+    [oauth_id] => 36017645
+)
+ -- action: read -- {}
+2010-10-21T13:13:06+01:00 -- post: Array
+(
+    [action] => setpublic
+    [id] => 1185
+    [SESS6ec0f22a0d98dfcb1576c8403171983e] => eb71015332c882d4fe2b21e690f59980
+    [PHPSESSID] => acb7719030357cf3ba004e94973a87f3
+    [view_elem] => 0
+    [oauth_token] => 36017645-Xju5mwqzuGPdWtgwkadBQHcINtoxKs9MdbJBZpd2G
+    [oauth_token_secret] => a3tjm4Y6ZNFWvRbMpqHDisQi6Md0r9cZ1lGwFhZnHyQ
+    [user_id] => 2
+    [user_login] => grudelsud
+    [oauth_id] => 36017645
+)
+ -- action: setpublic -- 
+2010-10-21T13:18:40+01:00 -- post: Array
+(
+    [action] => read
+    [SESS6ec0f22a0d98dfcb1576c8403171983e] => eb71015332c882d4fe2b21e690f59980
+    [PHPSESSID] => acb7719030357cf3ba004e94973a87f3
+    [view_elem] => 0
+    [oauth_token] => 36017645-Xju5mwqzuGPdWtgwkadBQHcINtoxKs9MdbJBZpd2G
+    [oauth_token_secret] => a3tjm4Y6ZNFWvRbMpqHDisQi6Md0r9cZ1lGwFhZnHyQ
+    [user_id] => 2
+    [user_login] => grudelsud
+    [oauth_id] => 36017645
+)
+ -- action: read -- {}
+2010-10-21T13:19:13+01:00 -- post: Array
+(
+    [action] => setpublic
+    [id] => 1185
+    [public] => 1
+    [SESS6ec0f22a0d98dfcb1576c8403171983e] => eb71015332c882d4fe2b21e690f59980
+    [PHPSESSID] => acb7719030357cf3ba004e94973a87f3
+    [view_elem] => 0
+    [oauth_token] => 36017645-Xju5mwqzuGPdWtgwkadBQHcINtoxKs9MdbJBZpd2G
+    [oauth_token_secret] => a3tjm4Y6ZNFWvRbMpqHDisQi6Md0r9cZ1lGwFhZnHyQ
+    [user_id] => 2
+    [user_login] => grudelsud
+    [oauth_id] => 36017645
+)
+ -- action: setpublic -- 
+2010-10-21T13:23:20+01:00 -- post: Array
+(
+    [action] => read
+    [SESS6ec0f22a0d98dfcb1576c8403171983e] => eb71015332c882d4fe2b21e690f59980
+    [PHPSESSID] => acb7719030357cf3ba004e94973a87f3
+    [view_elem] => 0
+    [oauth_token] => 36017645-Xju5mwqzuGPdWtgwkadBQHcINtoxKs9MdbJBZpd2G
+    [oauth_token_secret] => a3tjm4Y6ZNFWvRbMpqHDisQi6Md0r9cZ1lGwFhZnHyQ
+    [user_id] => 2
+    [user_login] => grudelsud
+    [oauth_id] => 36017645
+)
+ -- action: read -- {}
+2010-10-21T13:24:03+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-21T13:24:16+01:00 -- post: Array
+(
+    [action] => setpublic
+    [id_element] => 1185
+    [public] => 1
+)
+ -- action: setpublic -- 
+2010-10-21T13:26:09+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-21T13:26:13+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-21T13:26:24+01:00 -- post: Array
+(
+    [action] => setpublic
+    [id_element] => 1185
+    [public] => 1
+)
+ -- action: setpublic -- 
+2010-10-21T13:26:46+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-21T13:26:49+01:00 -- post: Array
+(
+    [action] => setpublic
+    [id_element] => 1185
+    [public] => 0
+)
+ -- action: setpublic -- 
+2010-10-21T13:26:53+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-21T13:28:41+01:00 -- post: Array
+(
+    [action] => setpublic
+    [id_element] => 1185
+    [public] => 1
+)
+ -- action: setpublic -- 
+2010-10-21T13:28:41+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-21T13:28:43+01:00 -- post: Array
+(
+    [action] => setpublic
+    [id_element] => 1185
+    [public] => 0
+)
+ -- action: setpublic -- 
+2010-10-21T13:28:43+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-21T13:28:46+01:00 -- post: Array
+(
+    [action] => setpublic
+    [id_element] => 1185
+    [public] => 1
+)
+ -- action: setpublic -- 
+2010-10-21T13:28:46+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-22T12:10:30+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-22T12:10:32+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-22T12:10:35+01:00 -- post: Array
+(
+    [action] => setpublic
+    [id_element] => 1185
+    [public] => 0
+)
+ -- action: setpublic -- 
+2010-10-22T12:10:35+01:00 -- post: Array
+(
+    [action] => read
+)
+ -- action: read -- {}
+2010-10-22T12:12:20+01:00 -- action: setpublic -- set is_public= id_element=1185 -- 
+2010-10-22T12:12:20+01:00 -- action: read -- {}
+2010-10-22T12:13:35+01:00 -- action: setpublic -- set is_public=1 id_element=1185 -- 
+2010-10-22T12:13:35+01:00 -- action: read -- {}
+2010-10-22T12:16:41+01:00 -- action: read -- {}
+2010-10-22T12:16:47+01:00 -- action: read -- {}
+2010-10-22T12:16:49+01:00 -- action: setpublic -- set is_public= id_element=1185 -- 
+2010-10-22T12:16:50+01:00 -- action: read -- {}
+2010-10-22T12:16:51+01:00 -- action: setpublic -- set is_public=1 id_element=1185 -- 
+2010-10-22T12:16:51+01:00 -- action: read -- {}
+2010-10-22T12:16:52+01:00 -- action: setpublic -- set is_public=1 id_element=1185 -- 
+2010-10-22T12:16:52+01:00 -- action: read -- {}
+2010-10-22T12:18:18+01:00 -- action: read -- {}
+2010-10-22T12:18:20+01:00 -- action: setpublic -- set is_public=1 id_element=1185 -- 
+2010-10-22T12:18:20+01:00 -- action: read -- {}
+2010-10-27T10:01:10+01:00 -- action: read -- {}
+2010-10-27T10:01:15+01:00 -- action: read -- {}
+2010-10-27T10:17:18+01:00 -- action: read -- {}

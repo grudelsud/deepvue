@@ -1,4 +1,0 @@
-AuthUserFile /www/deepvue.com/dv/admin/.htpasswd
-AuthType Basic
-AuthName "Admin"
-Require valid-user

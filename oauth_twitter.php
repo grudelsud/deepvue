@@ -32,6 +32,10 @@ if( !empty($_REQUEST['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !
 		}
 		$_SESSION['user_id'] = $result->id_user;
 		$_SESSION['user_login'] = $access_token['screen_name'];
+
+		// TODO: check here
+		$_SESSION['real_name'] = "puppaaaaaa";
+
 		$_SESSION['oauth_id'] = $access_token['user_id'];
 		$_SESSION['oauth_token'] = $access_token['oauth_token'];
 		$_SESSION['oauth_token_secret'] = $access_token['oauth_token_secret'];

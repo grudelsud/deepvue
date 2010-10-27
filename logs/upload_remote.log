@@ -989,3 +989,16 @@
 2010-10-09T19:28:21+01:00 -- uid=2 -- nev_id=459 -- cap -- t=2010-09-18 15:30:00 GMT 2 -- el_id=1182 -- 
 2010-10-09T19:38:09+01:00 -- uid=2 -- nev_id=460 -- cap -- t=2010-09-18 15:30:00 GMT 2 -- el_id=1183 -- 
 2010-10-09T19:38:28+01:00 -- uid=2 -- nev_id=461 -- cap -- t=2010-09-18 15:30:00 GMT 2 -- el_id=1184 -- 
+2010-10-19T10:58:51+01:00 -- uid=2 -- nev_id=462 -- fup=65b67039396fd90b488d75b3af80ef26.jpeg -- cap -- t=2010-09-18 15:30:00 GMT 2 -- el_id=462 -- 
+2010-10-19T11:09:31+01:00 -- uid=2 -- nev_id=463 -- fup=18aa3f8d8eafa2994e6f78f76e8bdc6d.jpeg -- cap -- t=2010-09-18 15:30:00 GMT 2 -- el_id=463 -- 
+2010-10-19T11:21:33+01:00 -- uid=2 -- nev_id=464 -- fup=1e74b985fc3eef0e77063bbec89b551e.jpeg -- cap -- t=2010-09-18 15:30:00 GMT 2 -- el_id=464 -- 
+2010-10-19T11:29:46+01:00 -- uid=2 -- nev_id=465 -- fup=2d485ccfbd8a1403dc81e769ac2abc38.jpeg -- cap -- t=2010-09-18 15:30:00 GMT 2 -- el_id=1185 -- 
+2010-10-27T09:22:56+01:00 -- uid=2 -- nev_id=466 -- fup=18a609690d37cfc591efb8c5b18534fe.jpeg -- cap -- t=2010-09-18 15:30:00 GMT 2 -- el_id=1186 -- sup: [DV alpha - 2010-09-18 15:30:00 GMT 2] hooray http://vampireweekend.local/dv//alpha/?time=&amp;image=18a609690d37cfc591efb8c5b18534fe&amp;user=grudelsud -- 
+2010-10-27T09:56:10+01:00 -- uid=2 -- nev_id=467 -- fup=f0bdabf98d97a826e816446d8f31f6dd.jpeg -- cap -- t=2010-09-18 15:30:00 GMT 2 -- el_id=1187 -- tweet: [DV alpha - 2010-09-18 15:30:00 GMT 2] timestamp http://vampireweekend.local/alpha/?time=1284827400&amp;image=f0bdabf98d97a826e816446d8f31f6dd&amp;user=grudelsud -- 
+2010-10-27T10:18:07+01:00 -- uid=2 -- nev_id=468 -- fup=bf5eb3cda12155162bab4c6aa5fc91c8.jpeg -- cap -- t=2010-09-18 15:30:00 GMT 2 -- el_id=1188 -- tweet: [DV alpha - 2010-09-18 15:30:00 GMT 2] debug twoauth http://vampireweekend.local/alpha/?time=1284820200&amp;image=bf5eb3cda12155162bab4c6aa5fc91c8&amp;user=grudelsud -- twstat: stdClass Object
+(
+    [error] => Status is over 140 characters.
+    [request] => /1/statuses/update.json
+)
+ -- 
+2010-10-27T10:21:52+01:00 -- uid=2 -- nev_id=469 -- fup=0653fd5fde8ec0144fcc37c75fc0e965.jpeg -- cap -- t=2010-09-18 15:30:00 GMT 2 -- el_id=1189 -- tweet: #DVa timestamp test http://vampireweekend.local/alpha/?time=1284820200&amp;image=0653fd5fde8ec0144fcc37c75fc0e965&amp;user=grudelsud -- 

@@ -8,7 +8,7 @@ $aggiunto = 0;
 
 if( !empty( $_POST["submitplace"]) ) {
 
-	$user = $_POST["user"]; // => liquene
+	$user = $_POST["user"]; // => liquene o altro
 
 	// TODO: change to reflect last method signature
 	$user_result = chk_credentials( "user_login", $user );
@@ -50,7 +50,7 @@ if( !empty( $_POST["submitplace"]) ) {
 <?php
 if ($aggiunto == 1)
 {
-	echo "<h3><br>&nbsp; Thank you!</h3>";
+	echo "<h3><br>&nbsp; Thank you! Place name added.</h3>";
 }
 else
 {

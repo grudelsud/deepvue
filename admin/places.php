@@ -26,6 +26,10 @@ if( !empty( $_POST["submit"]) ) {
 	}
 }
 
+if( !empty( $_GET["exlat"]) && !empty( $_GET["exlon"]) ) {
+	$dvdb->del_place( $_GET["exlat"], $_GET["exlon"] );
+}
+
 if( !empty( $_GET["del"]) ) {
 	$sql = "DELETE FROM dv_place WHERE id_place=".$_GET["del"];
 	$dvdb->query( $sql );
@@ -87,7 +91,7 @@ $(document).ready(function() {
 		<td><?php echo $place->lat; ?></td>
 		<td><?php echo $place->lon; ?></td>
 		<td><?php echo stripslashes( $place->text ); ?></td>
-		<td><a href="?del=<?php echo $place->id_place; ?>">[X]</a></td>
+		<td><a href="?del=<?php echo $place->id_place; ?>">[X]</a><a href="?exlat=<?php echo $place->lat; ?>&exlon=<?php echo $place->lon; ?>">[eX]</a></td>
 	</tr>
 	<?php
 	}

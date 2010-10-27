@@ -10,7 +10,7 @@ $nuovovalore = -1;
 
 if( !empty( $_POST["submitpublic"]) ) {
 
-	$user = $_POST["user"]; // => liquene
+	$user = $_POST["user"]; // => liquene o altro
 
 	// TODO: change to reflect last method signature
 	$user_result = chk_credentials( "user_login", $user );
@@ -53,7 +53,14 @@ if( !empty( $_POST["submitpublic"]) ) {
 if ($cambiato != 0)
 {
 //	echo "<h3><br>&nbsp; ".$vecchiovalore." Thank you! ".$cambiato."  ".$nuovovalore."</h3>";
-	echo "<h3><br>&nbsp; Thank you!</h3>";	
+	if ($nuovovalore)
+	{
+		echo "<h3><br>&nbsp; Thank you! It's now public.</h3>";	
+	}
+	else
+	{
+		echo "<h3><br>&nbsp; Thank you! It's now private.</h3>";		
+	}
 }
 else
 {
