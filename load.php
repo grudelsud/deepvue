@@ -1,5 +1,5 @@
 <?php
-define( 'DEBUG', false );
+define( 'DEBUG', true );
 
 define( 'SUBPATH', '/dv' );
 define( 'SERVER', 'http://'.$_SERVER['SERVER_NAME'] );
@@ -28,8 +28,18 @@ define( 'JSON', 'JSON', true );
 // application website: http://dev.londondroids.com/dv/
 // callback url: http://dev.londondroids.com/dv/oauth_twitter.php
 
-define( 'CONS_KEY', 'ON89tMujCKM36xTd0rW8OQ');
-define( 'CONS_SECR', 'ZMITKClcEl7jgryi5mowbGa3D2t14hQAFu6PGRc');
+/**
+ * PRODUCTION
+ * 
+*/
+define( 'CONS_KEY', 'AobKzamSYsaVA3rKAHLgQ');
+define( 'CONS_SECR', 'YQmSZJaMfuH1hybhKMjPX7fBEa7LKIc7ZuhUjry834');
+
+/**
+ * DEVELOPMENT
+ */
+//define( 'CONS_KEY', 'ON89tMujCKM36xTd0rW8OQ');
+//define( 'CONS_SECR', 'ZMITKClcEl7jgryi5mowbGa3D2t14hQAFu6PGRc');
 
 if( preg_match('/londondroids/', $_SERVER['SERVER_NAME']) ) {
 	// ** MySQL settings - You can get this info from your web host ** //
@@ -66,15 +76,11 @@ if( preg_match('/londondroids/', $_SERVER['SERVER_NAME']) ) {
 require_once( INC.'/functions.php');
 require_once( INC.'/dvdb.php');
 require_once( INC.'/dvfe.php');
-require_once( INC.'/twitteroauth/twitteroauth/twitteroauth.php');
 
 /**
  * EPITWITTER STUFF ADDED FOR CRAPPY HOSTINGSOLUTION
  * 
  */
-define( 'CONS_PRKEY', 'AobKzamSYsaVA3rKAHLgQ');
-define( 'CONS_PRSECR', 'YQmSZJaMfuH1hybhKMjPX7fBEa7LKIc7ZuhUjry834');
-
 require_once( INC.'/epitwitter/EpiCurl.php');
 require_once( INC.'/epitwitter/EpiOAuth.php');
 require_once( INC.'/epitwitter/EpiTwitter.php');

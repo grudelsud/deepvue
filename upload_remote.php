@@ -1,5 +1,4 @@
 <?php
-
 require_once('load.php');
 
 $now = date( "c" );
@@ -7,7 +6,7 @@ $msg = $now." -- ";
 $success = false;
 $has_photo = false;
 
-if( !empty( $_POST["deepvue_upload"]) ) {
+if( !empty( $_POST['deepvue_upload'] ) ) {
 
 	$user = $_POST["user"]; // => liquene
 	$user_result = chk_credentials( "user_login", $user );
@@ -18,6 +17,9 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 		$user_login = $user_result->user_login;
 		$msg .= "uid=".$id_user." -- ";
 		
+		/**
+		 * ADJUST EVENT
+		 */
 		$table_el = $table_prefix."element";
 		$table_ev = $table_prefix."event";
 
@@ -47,7 +49,7 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 
 		if ( 1 == $_POST["is_new"] ) {
 			
-			// FIXME: should it really close all previous running events?
+			// TODO: check this, should it really close all previous running events?
 			$dvdb->update( $table_ev, array( 'running' => 0 ), array( 'id_user' => $id_user ) );
 			
 			$values_ev['id_user'] = $id_user;
@@ -74,10 +76,51 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 		
 		// ok, we have a valid id_event, now proceed creating an element
 		$values_elem['id_user'] = $id_user;
-
-		$fileField = FILEFIELD;
 		
-		// gosh, you're so smart... :)
+		$caption = $_POST["caption"];
+		$notify = $_POST["notify"];
+
+		/**
+		 * SET MISC PARAMETERS
+		 */
+		$values_elem['is_new'] = $_POST["is_new"]; // => true
+		// description + relevance missing here
+		$values_elem['metric'] = $_POST["metric"]; // => 666.666
+		// is_geo_precise + is_manual missing here
+		$values_elem['is_public'] = $_POST["is_public"]; // => true
+		// modified + device_version missing here
+		$values_elem['app_version'] = $_POST["app_version"]; // => 0
+		
+		/**
+		 * READ CAPTION
+		 */
+		if( !empty( $caption ) ) {
+			$values_elem['caption'] = $caption; // => this is a caption, in this case image should be null.jpg
+			$msg .= "cap -- ";
+			$success = true;
+		}
+
+		/**
+		 * SET TIME AND GEO
+		 */
+		$elem_time = $_POST["time"];
+		list( $el_time, $el_timezone ) = explode( "GMT", $elem_time );
+		$time_stamp = strtotime( $el_time );
+
+		$values_elem['created'] = $elem_time; // => 2010-08-08 14:14:14 +0200
+		$msg .= "t=".$elem_time." -- ";
+
+		$lat = $_POST["lat"];
+		$lon = $_POST["lon"];
+
+		$values_elem['id_place'] = find_place( $id_user, $lat, $lon );
+		$values_elem['lat'] = $lat; // => 11.111
+		$values_elem['lon'] = $lon; // => 22.222
+		
+		/**
+		 * UPLOAD FILE
+		 */
+		$fileField = FILEFIELD;
 		$fileName = md5( "-".$id_user."-".$now."-" );
 		if ( $file = move_uploaded( $fileField, true, $fileName ) ) {
 			$path_info = pathinfo( $file );
@@ -90,70 +133,46 @@ if( !empty( $_POST["deepvue_upload"]) ) {
 			$msg .= "fup=".$path_info['basename']." -- ";
 			$success = true;
 		}
-
-		$values_elem['is_new'] = $_POST["is_new"]; // => true
-		$notify = $_POST["notify"]; // => true
-
-		$lat = $_POST["lat"];
-		$lon = $_POST["lon"];
-
-		$values_elem['id_place'] = find_place( $id_user, $lat, $lon );
-		$values_elem['lat'] = $lat; // => 11.111
-		$values_elem['lon'] = $lon; // => 22.222
-
-		$caption = $_POST["caption"];
-		if( !empty( $caption ) ) {
-			$values_elem['caption'] = $caption; // => this is a caption, in this case image should be null.jpg
-			$msg .= "cap -- ";
-			$success = true;
-		}
-
-		// description + relevance missing here
-
-		$values_elem['metric'] = $_POST["metric"]; // => 666.666
-
-		// is_geo_precise + is_manual missing here
 		
-		$values_elem['is_public'] = $_POST["is_public"]; // => true
-		$elem_time = $_POST["time"];
-		list( $el_time, $el_timezone ) = explode( "GMT", $elem_time );
-		$time_stamp = strtotime( $el_time );
-
-		$values_elem['created'] = $elem_time; // => 2010-08-08 14:14:14 +0200
-		$msg .= "t=".$elem_time." -- ";
-		// modified + device_version missing here
-		
-		$values_elem['app_version'] = $_POST["app_version"]; // => 0
-		
-		if ( $success ) {
+		if( $success ) {
 			$dvdb->insert( $table_el, $values_elem );
 			$msg .= "el_id=".$dvdb->insert_id." -- ";
 			
-			if( $notify == 1 ) {
+			if( 1 == $notify ) {
+
 				$oauth_token = $user_result->oauth_token;
 				$oauth_token_secret = $user_result->oauth_secret;
-				$twitteroauth = new TwitterOAuth( CONS_KEY, CONS_SECR, $oauth_token, $oauth_token_secret );
 
-				$status_update = "#DVa ".$caption." ";
-				
-				// TODO: make it smarter! it links to the ugly image without anything around it, and should contain a shortened url
+				$twitterObj = new EpiTwitter(CONS_KEY, CONS_SECR, $oauth_token, $oauth_token_secret);
+				$status = "#DVa ".$caption;
+
 				if( $has_photo ) {
 					$image_url = SERVER."/alpha/?time=".$time_stamp."&image=".$values_elem['filename']."&user=".$user_login;
-					$status_update .= " ".$image_url;
+					$status .= " ".$image_url;
 				}
-				$msg .= "tweet: ".$status_update." -- ";
-				$parameters['status']  = $status_update;
-				$parameters['lat'] = $values_elem['lat']; // => 11.111
-				$parameters['long'] = $values_elem['lon']; // => 22.222
+				
+				$parameters['status']  = $status;
+				$parameters['lat'] = $lat; // => 11.111
+				$parameters['long'] = $lon; // => 22.222
 				$parameters['display_coordinates'] = true;
-				$status = $twitteroauth->post('statuses/update', $parameters);
-				// $msg .= "twstat: ".print_r( $status, true )." -- ";
-			}
-			
+
+				try {
+					// update the status
+					$update_status = $twitterObj->post_statusesUpdate( $parameters );
+					// get the ID of the tweet just sent
+					$tweet_id = $update_status->response['id'];
+					$msg .= "status: ".$tweet_id." - ".$status." -- ";
+				} catch( Exception $e ) {
+					$msg .= "excep=".$e->getMessage()." -- ";					
+				}
+			} // endif notify
+
 			if( $has_photo ) {
 				$dvdb->update( $table_ev, array( 'has_photos' => 1 ), array( 'id_event' => $id_event ) );
 			}
-		}
+			
+		} // endif success
+
 	}
 }
 
@@ -164,5 +183,4 @@ if ( $success ) {
 } else {
 	header($_SERVER["SERVER_PROTOCOL"]." 403 Forbidden");
 }
-
 ?>

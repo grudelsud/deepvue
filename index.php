@@ -66,3 +66,5 @@ if ( get_dv_globals('user_auth') ) {
 <?php
 }
 ?>
+<pre>Session: <?php print_r( $_SESSION ); ?></pre>
+<pre>Cookie: <?php print_r( $_COOKIE ); ?></pre>

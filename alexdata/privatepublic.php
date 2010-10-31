@@ -10,15 +10,6 @@ $nuovovalore = -1;
 
 if( !empty( $_POST["submitpublic"]) ) {
 
-	$user = $_POST["user"]; // => liquene o altro
-
-	// TODO: change to reflect last method signature
-	$user_result = chk_credentials( "user_login", $user );
-
-	if( $user_result != null ) {
-		$id_user = $user_result->id_user;
-		$msg .= "uid=".$id_user." -- ";
-
 		$vecchiovalore = $_POST['public'];
 		$nuovovalore = 0;
 		if ($vecchiovalore==0)
@@ -28,9 +19,7 @@ if( !empty( $_POST["submitpublic"]) ) {
 		
 		$cambiato = $_POST['id_element'];
 		
-		$dvdb->set_public( $cambiato, $nuovovalore );
-	}
-	
+		$dvdb->set_public( $cambiato, $nuovovalore );	
 }
 ?>
 
@@ -41,6 +30,9 @@ if( !empty( $_POST["submitpublic"]) ) {
 <link type="text/css" rel="stylesheet" href="http://deepvue.com/alpha/css/deepvue.css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta charset="utf-8">
+
+<meta http-equiv="refresh" content="2;url=<?php echo $_POST["pp_page"] ?> ">
+
 <meta name="Author" content="Alex Valli, av@deepvue.com">
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <meta name="viewport" content="width=1024" />
@@ -52,7 +44,7 @@ if( !empty( $_POST["submitpublic"]) ) {
 <?php
 if ($cambiato != 0)
 {
-//	echo "<h3><br>&nbsp; ".$vecchiovalore." Thank you! ".$cambiato."  ".$nuovovalore."</h3>";
+	//echo "<h3><br>&nbsp; ".$vecchiovalore." xxxxxxxx ".$cambiato."  ".$nuovovalore."</h3>";
 	if ($nuovovalore)
 	{
 		echo "<h3><br>&nbsp; Thank you! It's now public.</h3>";	

@@ -6,14 +6,19 @@ $VICINO=100;
 
 require_once('../load.php');
 
+echo "/* ".get_dv_globals('user_auth')." */";
+echo "/* ".get_dv_globals('user_reg')." */";
+echo "/* ".$_SESSION['user_login']." */";
+echo "/* ".$_SESSION['real_name']." */";
+
 $elements = $dvdb->get_elements("", "", false);
 
 $count=0;
 $messi=0;
 
 echo "var debugtime = new Array(100);";
-
 echo "var cesura = new Array(100);";
+echo "var comments = new Array(100);";
 echo "var photos = new Array(100);";
 echo "var thumbtexts = new Array(100);";
 echo "var mapcenter =new Array(100);";
@@ -76,7 +81,7 @@ foreach ($elements as $element)
 	$tc+=$element->timezone*3600;				  // per tagliare bene le giornate ovunque nel mondo
 	$tc-=3600;									  // una ora indietro per far tornare le cose alle 3.30 del mattino nel giorno prima e le cose alle 4.30 del mattino nel giorno stesso (dopo)
 	
-	if ($owner==-1 && $element->is_public==0)
+	if ($owner!=1 && $element->is_public==0)
 	{
 		$mettilo=0;
 	}
@@ -89,6 +94,19 @@ foreach ($elements as $element)
 	echo "ispublic[".$messi."]=".$element->is_public.";   ";
 	echo "idelement[".$messi."]=".$element->id_element.";   ";
 	echo "cesura[".$messi."]=".$diverso.";   ";
+
+	// caricamento commenti
+	$comments = $dvdb->get_comments( $element->id_element );
+	$comments_string = ""; //"sql: ".$dvdb->last_query." rows: ".$dvdb->num_rows." ";
+	$count=0;
+	foreach($comments as $comment) {
+		if ($count<$dvdb->num_rows)
+		{
+			$comments_string = $comments_string.$comment->user_login.' > '.$comment->comment_content.'<br>';
+			$count++;
+		}
+	}
+	echo "comments[".$messi.']="'.$comments_string.'";';
 
 
 	$avglat=($element->lat_start+$element->lat_end)/2.0;

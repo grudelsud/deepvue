@@ -6,9 +6,11 @@ $now = date( "c" );
 $msg = $now." -- ";
 
 try {
-	$twitterObj = new EpiTwitter(CONS_PRKEY, CONS_PRSECR);
+	$twitterObj = new EpiTwitter(CONS_KEY, CONS_SECR);
 	$url = $twitterObj->getAuthenticationUrl();
-    header('Location: '. $url);
+	$msg .= "redirect: ".$url." -- ";
+	log_req( $msg, "login_twitterepi.log" );
+	header('Location: '. $url);
 
 } catch (Exception $e) {
 

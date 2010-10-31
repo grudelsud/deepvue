@@ -131,7 +131,7 @@ class DVDB {
 
 		$sql  = "SELECT ".$tbl_elem.".id_element as id_element, ".$tbl_elem.".id_event as id_event, ".$tbl_elem.".lat as lat, ".$tbl_elem.".lon as lon, ".$tbl_elem.".is_new as is_new, ".$tbl_elem.".is_public as is_public, ";
 		$sql .= $tbl_elem.".metric as metric, ".$tbl_elem.".created as created, ".$tbl_elem.".filename as filename, ".$tbl_elem.".ext as ext, ".$tbl_elem.".caption as caption, ";
-		$sql .= $tbl_user.".user_login as user_login, ";
+		$sql .= $tbl_user.".user_login as user_login, ".$tbl_user.".user_name as user_name, ";
 		$sql .= $tbl_event.".lat_start as lat_start, ".$tbl_event.".lon_start as lon_start, ".$tbl_event.".time_start as time_start, ";
 		$sql .= $tbl_event.".lat_end as lat_end, ".$tbl_event.".lon_end as lon_end, ".$tbl_event.".time_end as time_end, ";
 		$sql .= $tbl_event.".timezone as timezone, ".$tbl_event.".has_photos as has_photos ";
@@ -185,8 +185,22 @@ class DVDB {
 		global $table_prefix;
 		$tbl_place = $table_prefix."place";
 
-		$sql = "DELETE FROM ".$tbl_place." WHERE lat=".$lat." AND lon=".$lon.";";
-		return $this->query( $sql );
+		$sql = "SELECT * FROM ".$tbl_place.";";
+		$res = $this->query( $sql );
+		$places = $this->last_result;
+			
+		foreach( $places as $place ) {
+			$delta = abs( $lat - $place->lat ) + abs( $lon - $place->lon );
+			if( $delta < 0.001 ) {
+				$delplace[] = $place->id_place;
+			}
+		}
+		$rows = 0;
+		foreach( $delplace as $id ) {
+			$sql = "DELETE FROM ".$tbl_place." WHERE id_place=".$id.";";
+			$rows += $this->query( $sql );
+		}
+		return $rows;
 	}
 
 	/**
@@ -205,7 +219,7 @@ class DVDB {
 		$sql .= $tbl_user.".user_login as user_login ";
 		$sql .= "FROM ".$tbl_place.", ".$tbl_user." ";
 		$sql .= "WHERE ".$tbl_place.".id_user = ".$tbl_user.".id_user ";
-		$sql .= "ORDER BY ".$tbl_place.".id_user ASC";
+		$sql .= "ORDER BY ".$tbl_place.".id_user, ".$tbl_place.".text ASC";
 		
 		if ( !empty( $user_login ) ) {
 			$sql .= "AND ".$tbl_place.".user_login = '".$user_login."' ";

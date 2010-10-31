@@ -383,6 +383,11 @@ function siteinfo( $value )
 	}
 }
 
+function get_dv_globals( $param ) {
+	global $dv_globals;
+	return $dv_globals[ $param ];
+}
+
 function set_dv_globals() {
 	global $dv_globals;
 
@@ -421,10 +426,4 @@ function set_dv_globals() {
 		$dv_globals['user_reg'] = false;
 	}
 }
-
-function get_dv_globals( $param ) {
-	global $dv_globals;
-	return $dv_globals[ $param ];
-}
-
 ?>

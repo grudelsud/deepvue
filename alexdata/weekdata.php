@@ -2,6 +2,10 @@
 
 require_once('../load.php');
 
+echo "/* ".get_dv_globals('user_auth')." */";
+echo "/* ".get_dv_globals('user_reg')." */";
+echo "/* ".$_SESSION['user_login']." */";
+echo "/* ".$_SESSION['real_name']." */";
 
 $latm=100000;
 $lonm=100000;
@@ -78,7 +82,7 @@ foreach ($elements as $element)
 		$mtype=0;	//stay
 	}
 	
-	if ($owner==-1 && $element->is_public==0)
+	if ($owner!=1 && $element->is_public==0)
 	{
 		$mettilo=0;
 	}

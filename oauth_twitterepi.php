@@ -9,14 +9,14 @@ try {
 	if( !empty($_COOKIE['oauth_token']) && !empty($_COOKIE['oauth_token_secret']) ) {
 		
 		$msg .= "auth via cookie -- ";
-		$twitterObj = new EpiTwitter($consumer_key, $consumer_secret, $_COOKIE['oauth_token'], $_COOKIE['oauth_token_secret']);
 		$oauth_token = $_COOKIE['oauth_token'];
 		$oauth_token_secret = $_COOKIE['oauth_token_secret'];
+		$twitterObj = new EpiTwitter($consumer_key, $consumer_secret, $oauth_token, $oauth_token_secret);
 
 	} else if( !empty($_GET['oauth_token']) ) {
 
 		$msg .= "auth via get -- ";
-		$twitterObj = new EpiTwitter(CONS_PRKEY, CONS_PRSECR);
+		$twitterObj = new EpiTwitter(CONS_KEY, CONS_SECR);
 		
 		$twitterObj->setToken($_GET['oauth_token']);
 		$token = $twitterObj->getAccessToken();
@@ -48,16 +48,19 @@ try {
 			$values['oauth_token'] = $oauth_token;
 			$values['oauth_secret'] = $oauth_token_secret;
 			$values['user_login'] = $user_info->screen_name;
+			$values['user_name'] = $user_info->name;
 	
 			$dvdb->insert( $table, $values );		
 			$result = $dvdb->get_row( "SELECT * FROM ".$table." WHERE id_user = ".$dvdb->insert_id );
 			
-			mail( "thomasalisi@gmail.com", "[deepVue] new user", "new user ".print_r( $result, true ) );
+			mail( "thomasalisi@gmail.com", "[DV] new user", "new user ".print_r( $result, true ) );
 		} else {
-			// TODO: Updating tokens here, check if necessary
 			$values['oauth_token'] = $oauth_token;
 			$values['oauth_secret'] = $oauth_token_secret;
 				
+			$values['user_login'] = $user_info->screen_name;
+			$values['user_name'] = $user_info->name;
+			
 			$dvdb->update( $table, $values, array('oauth_id' => $user_info->id) );
 		}
 		$_SESSION['user_id'] = $result->id_user;
@@ -70,7 +73,7 @@ try {
 		
 		$best_before = time() + 3600 * 24 * 365;
 		foreach( $_SESSION as $key => $value ) {
-			setcookie( $key, $value, $best_before );
+			setcookie( $key, $value, $best_before, '/' );
 		}
 	}
 

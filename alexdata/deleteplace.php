@@ -2,31 +2,24 @@
 
 require_once('../load.php');
 $now = date( "c" );
-$msg = $now." -- ";
 
-$aggiunto = 0;
+$cancellato = 0;
+$lat=-1;
+$lon=-1;
 
-if( !empty( $_POST["submitplace"]) ) {
+if( !empty( $_POST["submitdeleteplace"]) ) {
 
 	$user = $_POST["user"]; // => liquene o altro
 
 	// TODO: change to reflect last method signature
 	$user_result = chk_credentials( "user_login", $user );
 
-	if( $user_result != null && strlen($_POST['text'])>0) {
+	if( $user_result != null ) {
 		$id_user = $user_result->id_user;
-		$msg .= "uid=".$id_user." -- ";
 
-		list( $lat, $lon ) = explode( " ", $_POST['latlon'] );
-		$place_data['id_user'] = $id_user;
-		$place_data['lat'] = $lat;
-		$place_data['lon'] = $lon;
-		$place_data['text'] = $_POST['text'];
-
-		$tbl_place = $table_prefix."place";
-		$dvdb->insert( $tbl_place, $place_data );
-		
-		$aggiunto = 1;
+		list( $lat, $lon ) = explode( " ", $_POST['dellatlon'] );
+		$dvdb->del_place( $lat , $lon );
+		$cancellato = 1;
 	}
 	
 }
@@ -35,13 +28,13 @@ if( !empty( $_POST["submitplace"]) ) {
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>DeepVue Alpha | Places</title>
+<title>DeepVue Alpha | Delete Places</title>
 <link type="text/css" rel="stylesheet" href="http://deepvue.com/alpha/css/deepvue.css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-<meta http-equiv="refresh" content="2;url=<?php echo $_POST["ap_page"] ?> ">
-
 <meta charset="utf-8">
+
+<meta http-equiv="refresh" content="2;url=<?php echo $_POST["dp_page"] ?> ">
+
 <meta name="Author" content="Alex Valli, av@deepvue.com">
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <meta name="viewport" content="width=1024" />
@@ -51,9 +44,10 @@ if( !empty( $_POST["submitplace"]) ) {
 
 
 <?php
-if ($aggiunto == 1)
+if ($cancellato == 1)
 {
-	echo "<h3><br>&nbsp; Thank you! Place name added.</h3>";
+	//echo "<h3><br>LAT=".$lat." LON=".$lon." &nbsp; Thank you! Place name deleted.</h3>";
+	echo "<h3><br> &nbsp; Thank you! Place name deleted.</h3>";
 }
 else
 {

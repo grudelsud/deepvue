@@ -2,44 +2,33 @@
 
 require_once('../load.php');
 $now = date( "c" );
-$msg = $now." -- ";
 
 $aggiunto = 0;
 
-if( !empty( $_POST["submitplace"]) ) {
+if( !empty( $_POST["submitcomment"]) && strlen($_POST['commentcontent'])>0 ) {
 
 	$user = $_POST["user"]; // => liquene o altro
 
 	// TODO: change to reflect last method signature
 	$user_result = chk_credentials( "user_login", $user );
 
-	if( $user_result != null && strlen($_POST['text'])>0) {
-		$id_user = $user_result->id_user;
-		$msg .= "uid=".$id_user." -- ";
-
-		list( $lat, $lon ) = explode( " ", $_POST['latlon'] );
-		$place_data['id_user'] = $id_user;
-		$place_data['lat'] = $lat;
-		$place_data['lon'] = $lon;
-		$place_data['text'] = $_POST['text'];
-
-		$tbl_place = $table_prefix."place";
-		$dvdb->insert( $tbl_place, $place_data );
+	if( $user_result != null ) {
 		
+		$dvdb->add_comment( $_POST['element'] , $user_result->id_user, $comment_status, $_POST['commentcontent'] );
 		$aggiunto = 1;
 	}
-	
 }
 ?>
 
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>DeepVue Alpha | Places</title>
+<title>DeepVue Alpha | Add Comment</title>
 <link type="text/css" rel="stylesheet" href="http://deepvue.com/alpha/css/deepvue.css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<meta http-equiv="refresh" content="2;url=<?php echo $_POST["ap_page"] ?> ">
+
+<meta http-equiv="refresh" content="2;url=<?php echo $_POST["ac_page"] ?> ">
 
 <meta charset="utf-8">
 <meta name="Author" content="Alex Valli, av@deepvue.com">
@@ -53,13 +42,12 @@ if( !empty( $_POST["submitplace"]) ) {
 <?php
 if ($aggiunto == 1)
 {
-	echo "<h3><br>&nbsp; Thank you! Place name added.</h3>";
+	echo "<h3><br>&nbsp; Thank you! Comment added.</h3>";
 }
 else
 {
 	echo "<h3><br>&nbsp; Nothing happened.</h3>";
 }
-
 
 ?>
 
