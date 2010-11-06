@@ -1,11 +1,22 @@
 <?php
 
-function send_authcode( $login, $auth, $email ) {
-	$message  = "Hello ".$login."\n\n";
-	$message .= "you can start using deepVue from your mobile phone using the following authorization code: ".$auth."\n\n";
-	$message .= "hope to see you online soon.\n\n- DeepVue\n";
+function send_email( $email, $subj, $message ) {
+
+	$from = "info@deepvue.com";
+	$headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 	
-	mail( $email, "[welcome to DeepVue alpha] auth code", $message );
+	mail( $email, $subj, $message, $headers );
+}
+
+function send_authcode( $login, $auth, $email ) {
+	$message  = "Hello, ".$login."!\n\nType in the app the following secret code: ".$auth."\n";
+	$message .= "Hope to see your story soon.\n\nBest,\nDeepVue";
+
+	$subj = "Welcome! Here's your secret code.";
+	$from = "info@deepvue.com";
+	$headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+	
+	mail( $email, $subj, $message, $headers );
 }
 
 function log_req( $msg, $file_name = 'default.log' ) {
@@ -20,12 +31,26 @@ function log_req( $msg, $file_name = 'default.log' ) {
 function logout()
 {
 	foreach( $_COOKIE as $key => $val ) {
-		setcookie( $key, "", 1 );
+		setcookie( $key, "", 1, '/' );
 	}
 	session_start();
 	session_destroy();
 }
 
+
+function get_short_link($url) {
+	$bitly_login="grudelsud";
+	$bitly_apikey="R_545aa8574c71919e07d1f8faf1d65682";
+	
+	$api_call = file_get_contents("http://api.bit.ly/shorten?version=2.0.1&longUrl=".$url."&login=".$bitly_login."&apiKey=".$bitly_apikey);	
+	$bitlyinfo = json_decode( utf8_encode($api_call), true );
+
+	if ($bitlyinfo['errorCode']==0) {
+		return $bitlyinfo['results'][urldecode($url)]['shortUrl'];
+	} else {
+		return false;
+	}
+}
 
 function move_uploaded( $fileField, $chkValidImage = true, $fileName = CONS_EMPTY, $dir = UPLOAD_DIR ) {
 	if ($_FILES[$fileField]["error"] == UPLOAD_ERR_OK) {
@@ -63,7 +88,7 @@ function chk_credentials( $key, $value ) {
 	$table = $table_prefix."user";
 
 	$result = $dvdb->get_row( "SELECT * FROM ".$table." WHERE ".$key."='". $value ."'" );
-	if ( !empty( $result ) ) {
+	if ( $dvdb->num_rows > 0 ) {
 		return $result;
 	} else {
 		return null;

@@ -15,10 +15,14 @@ if( !empty( $_GET["send"]) ) {
 		$user = $users[0];
 
 		$email = $user->user_email;
-		$auth = substr( $user->oauth_secret, 0, 4 );
+		$auth = substr( md5( $email ), 0, 4 );
 		$login = $user->user_login;
-		
-		send_authcode( $login, $auth, $email );
+		$name = $user->user_name;
+
+		send_authcode( $name, $auth, $email );
+
+		$table_us = $table_prefix."user";
+		$dvdb->update( $table_us, array( 'user_code' => $auth ), array( 'id_user' => $user->id_user ) );
 		$msg .= "msg sent to ".$email." -- ";
 	}
 }
@@ -50,10 +54,10 @@ $(document).ready(function() {
 	$users = $dvdb->get_users();
 
 	foreach ($users as $user) {
-		$auth = substr( $user->oauth_secret, 0, 4 );
+		$auth = substr( md5($user->user_email), 0, 4 );
 	?>
 	<tr>
-		<td><?php echo $user->id_user.", ".$user->user_login; ?></td>
+		<td><?php echo $user->id_user; ?> - <a href="http://twitter.com/<?php echo $user->user_login; ?>"><?php echo $user->user_login; ?></a></td>
 		<td><?php echo $user->user_email; ?></td>
 		<td><?php echo $user->user_code; ?> [computed: <?php echo $auth; ?>]</td>
 		<td><a href="?send=<?php echo $user->id_user; ?>">[->]</a><a href="?del=<?php echo $user->id_user; ?>">[X]</a></td>

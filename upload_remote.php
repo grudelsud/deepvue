@@ -5,12 +5,23 @@ $now = date( "c" );
 $msg = $now." -- ";
 $success = false;
 $has_photo = false;
+$auth_init = false;
 
 if( !empty( $_POST['deepvue_upload'] ) ) {
 
-	$user = $_POST["user"]; // => liquene
-	$user_result = chk_credentials( "user_login", $user );
+	$user = strtolower( $_POST["user"] ); // => 7b54
+	$user_result = chk_credentials( "user_code", $user );
 
+	$lat = $_POST["lat"];
+	$lon = $_POST["lon"];
+	
+	if( $lat == 0 && $lon == 0 ) {
+		$auth_init = true;
+		$msg .= "auth packet -- ";
+	}
+
+//	$msg .= "chk=".$user." sql=".$dvdb->last_query." user_res=".var_export( $user_result, true )." -- ";
+	
 	if( !empty( $user_result ) ) {
 
 		$id_user = $user_result->id_user;
@@ -70,7 +81,10 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 
 			$id_event = $result_ev->id_event;
 			$values_elem['id_event'] = $id_event;
-			$dvdb->update( $table_ev, $values_ev, array( 'id_event' => $id_event) );
+			
+			if( !$auth_init ) {
+				$dvdb->update( $table_ev, $values_ev, array( 'id_event' => $id_event) );
+			}
 			$msg .= "uev_id=".$id_event." -- ";
 		}
 		
@@ -135,8 +149,10 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 		}
 		
 		if( $success ) {
-			$dvdb->insert( $table_el, $values_elem );
-			$msg .= "el_id=".$dvdb->insert_id." -- ";
+			if( !$auth_init ) {
+				$dvdb->insert( $table_el, $values_elem );
+				$msg .= "el_id=".$dvdb->insert_id." -- ";
+			}			
 			
 			if( 1 == $notify ) {
 
@@ -144,10 +160,11 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 				$oauth_token_secret = $user_result->oauth_secret;
 
 				$twitterObj = new EpiTwitter(CONS_KEY, CONS_SECR, $oauth_token, $oauth_token_secret);
-				$status = "#DVa ".$caption;
+				$status = $caption;
 
 				if( $has_photo ) {
-					$image_url = SERVER."/alpha/?time=".$time_stamp."&image=".$values_elem['filename']."&user=".$user_login;
+					$image_url = SERVER."?time=".$time_stamp."&image=".$values_elem['filename']."&story=".$user_login;
+//					$short_url = get_short_link( $image_url );
 					$status .= " ".$image_url;
 				}
 				
@@ -178,9 +195,14 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 
 log_req( $msg, "upload_remote.log" );
 
-if ( $success ) {
-	header($_SERVER["SERVER_PROTOCOL"]." 200 OK");
+if( $auth_init && $success ) {
+	header($_SERVER["SERVER_PROTOCOL"]." 467 CODE ACK");
 } else {
-	header($_SERVER["SERVER_PROTOCOL"]." 403 Forbidden");
+	if ( $success ) {
+		header($_SERVER["SERVER_PROTOCOL"]." 200 OK");
+	} else {
+		header($_SERVER["SERVER_PROTOCOL"]." 466 WRONG CODE ");
+	}
 }
+
 ?>

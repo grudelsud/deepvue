@@ -1,5 +1,9 @@
 # DB changes
 
+## oct 31st
+
+added dv_user.user_name
+
 ## oct 19th
 
 ``ALTER TABLE `dv_element` CHANGE `is_best` `notify` TINYINT( 4 ) NULL DEFAULT NULL``

@@ -50,10 +50,17 @@ try {
 			$values['user_login'] = $user_info->screen_name;
 			$values['user_name'] = $user_info->name;
 	
-			$dvdb->insert( $table, $values );		
+			$dvdb->insert( $table, $values );
 			$result = $dvdb->get_row( "SELECT * FROM ".$table." WHERE id_user = ".$dvdb->insert_id );
 			
-			mail( "thomasalisi@gmail.com", "[DV] new user", "new user ".print_r( $result, true ) );
+			$message = "new user ".print_r( $result, true );
+			$email = "thomasalisi@gmail.com";
+			$subj = "[DV] new user";
+			$from = "info@deepvue.com";
+			$headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+			
+			mail( $email, $subj, $message, $headers );
+
 		} else {
 			$values['oauth_token'] = $oauth_token;
 			$values['oauth_secret'] = $oauth_token_secret;
@@ -78,7 +85,7 @@ try {
 	}
 
 	log_req( $msg, "oauth_twitterepi.log" );
-	header('Location: index.php');
+	header('Location: /');
 
 } catch (Exception $e) {
 

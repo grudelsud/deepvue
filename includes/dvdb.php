@@ -106,14 +106,68 @@ class DVDB {
 	public function add_comment( $id_element, $id_user, $comment_status, $comment_content ) {
 		global $table_prefix;
 		$tbl_comment = $table_prefix."comment";
-		
-		// TODO: add logic! should add comment only if public, check DATE not working
-		$comment_values["id_element"] = $id_element;
-		$comment_values["id_user"] = $id_user; 
-		$comment_values["comment_status"] = $comment_status;
-		$comment_values["comment_content"] = $comment_content; 
-		$comment_values["created"] = date( "c" );
-		$this->insert( $tbl_comment, $comment_values );
+		$tbl_element = $table_prefix."element";
+		$tbl_user = $table_prefix."user";
+
+		$now = date( "c" );
+		$msg = $now." -- add comment -- ";
+
+		$element = $this->get_row( "SELECT * FROM ".$tbl_element." WHERE id_element = ".$id_element );
+
+		if( 1 == $element->is_public || $element->id_user == $id_user ) {
+			
+			// fetch recipient and send notification email
+			$id_user_to = $element->id_user;
+			$user_to = $this->get_row( "SELECT * FROM ".$tbl_user." WHERE id_user = ".$id_user_to );
+
+			$time = strtotime( $element->created );
+			$image_url = SERVER."?time=".$time."&image=".$element->filename."&story=".$user_to->user_login;
+			$msg .= "from: ".$id_user." to: ".$id_user_to." -- ";
+			
+			$message  = "Someone commented on your story\n ".$image_url."\n";
+			$message .= "\"".stripslashes( $comment_content )."\"\n";
+			send_email( $user_to->user_email, "New comment", $message );
+			
+			// now post a tweet if no previous comments are present
+//			$comment = $this->get_row( "SELECT * FROM ".$tbl_comment." WHERE id_element = ".$id_element );
+
+//			if( 0 == $this->num_rows ) {
+				$user_from = $this->get_row( "SELECT * FROM ".$tbl_user." WHERE id_user = ".$id_user );
+				$oauth_token = $user_from->oauth_token;
+				$oauth_token_secret = $user_from->oauth_secret;
+
+				$twitterObj = new EpiTwitter(CONS_KEY, CONS_SECR, $oauth_token, $oauth_token_secret);
+
+				$status = "@".$user_to->user_login." ".$image_url." - ";
+				$tokens = explode( " ", $comment_content );
+				foreach( $tokens as $token ) {
+					if( 140 > strlen( $token ) + strlen( $status ) + 4 ) {
+						$status .= $token." ";
+					} else {
+						break;
+					}
+				}
+				$status .= "...";
+				$parameters['status']  = $status;
+				try {
+					// update the status
+					$update_status = $twitterObj->post_statusesUpdate( $parameters );
+					$msg .= "status: ".$update_status->responseText;
+				} catch( Exception $e ) {
+					$msg .= "excep=".$e->getMessage()." -- ";
+				}
+//			}
+			
+			// and finally update the comments table
+			$comment_values["id_element"] = $id_element;
+			$comment_values["id_user"] = $id_user; 
+			$comment_values["comment_status"] = $comment_status;
+			$comment_values["comment_content"] = $comment_content; 
+			$comment_values["created"] = date( "c" );
+
+			$this->insert( $tbl_comment, $comment_values );
+		}
+		log_req( $msg, "comment.log" );
 	}
 
 	/**

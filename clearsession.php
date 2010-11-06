@@ -13,6 +13,6 @@ require_once('includes/functions.php');
 logout();
 
 /* Redirect to page with the connect to Twitter option. */
-header( 'Location: '.ABSDOMAIN );
+header( 'Location: /' );
 
 ?>
