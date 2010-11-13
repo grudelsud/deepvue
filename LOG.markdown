@@ -1,5 +1,10 @@
 # DB changes
 
+## nov 13th
+
+added dv_element.timezone
+added dv_event.timezone_end
+
 ## oct 31st
 
 added dv_user.user_name

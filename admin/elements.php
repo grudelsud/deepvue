@@ -6,15 +6,21 @@ require_once('../load.php');
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>deepvue - admin</title>
-<link href="../css/deepvue.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../lib/jquery-1.4.2.min.js"></script>          
-<script type="text/javascript">                                         
-$(document).ready(function() {
-});
-</script>
+<link href="./style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
+
+<div id="wrapper">
+Select stream: <?php 
+$users = $dvdb->get_users();
+foreach( $users as $user ) {
+	echo "<a href=\"?user=".$user->user_login."\">".$user->user_login."</a> ";
+}
+if( isset( $_GET['user'] ) ) {
+	$elements = $dvdb->get_elements("", $_GET['user'], false);
+
+?>
 <table>
 	<tr>
 		<th colspan="2">user, event data</th>
@@ -26,7 +32,9 @@ $(document).ready(function() {
 		<th>caption</th>
 	</tr>
 <?php
-$elements = $dvdb->get_elements("", "", false);
+} else {
+	$elements = array();
+}
 echo $dvdb->last_query;
 
 foreach ($elements as $element) {
@@ -53,5 +61,11 @@ foreach ($elements as $element) {
 }
 ?>
 </table>
+
+</div><!-- end of #wrapper -->
+
+<?php
+include('debug.php');
+?>
 </body>
 </html>

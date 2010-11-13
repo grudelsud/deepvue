@@ -41,15 +41,12 @@ if( !empty( $_GET["del"]) ) {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>deepvue - admin</title>
-<link href="../css/deepvue.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../lib/jquery-1.4.2.min.js"></script>
-<script type="text/javascript">                                         
-$(document).ready(function() {
-});
-</script>
+<link href="./style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
+
+<div id="wrapper">
 
 <form id="form1" name="form1" method="post" action="">
 <table>
@@ -101,5 +98,11 @@ $(document).ready(function() {
 	log_req( $msg, "places.log" );
 	?>
 </table>
+</div><!-- end of #wrapper -->
+
+<?php
+include('debug.php');
+?>
+
 </body>
 </html>

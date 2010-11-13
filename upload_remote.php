@@ -58,6 +58,9 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 		list( $ev_time, $ev_timezone ) = explode( "GMT", $time_start );
 		$values_ev['timezone'] = $ev_timezone;
 
+		list( $ev_time_end, $ev_timezone_end ) = explode( "GMT", $time_end );
+		$values_ev['timezone_end'] = $ev_timezone_end;
+		
 		if ( 1 == $_POST["is_new"] ) {
 			
 			// TODO: check this, should it really close all previous running events?
@@ -119,8 +122,9 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 		 */
 		$elem_time = $_POST["time"];
 		list( $el_time, $el_timezone ) = explode( "GMT", $elem_time );
-		$time_stamp = strtotime( $el_time );
-
+		$time_stamp = strtotime( $el_time ) + 3600 * $el_timezone;
+		$values_elem['timezone'] = $el_timezone;
+		
 		$values_elem['created'] = $elem_time; // => 2010-08-08 14:14:14 +0200
 		$msg .= "t=".$elem_time." -- ";
 
@@ -143,6 +147,9 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 				image_resize( $file, THUMB_W, THUMB_H, false, THUMB_SUFFIX );
 				$values_elem['filename'] = $fileName;
 				$has_photo = true;
+				
+				// TODO: marketing fix
+				$notify = 1;
 			}
 			$msg .= "fup=".$path_info['basename']." -- ";
 			$success = true;
@@ -154,17 +161,17 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 				$msg .= "el_id=".$dvdb->insert_id." -- ";
 			}			
 			
-			if( 1 == $notify ) {
+			if( 1 == $notify && !$auth_init && 1 == $_POST["is_public"] ) {
 
 				$oauth_token = $user_result->oauth_token;
 				$oauth_token_secret = $user_result->oauth_secret;
 
 				$twitterObj = new EpiTwitter(CONS_KEY, CONS_SECR, $oauth_token, $oauth_token_secret);
-				$status = $caption;
+				$status = stripslashes( $caption );
 
 				if( $has_photo ) {
-					$image_url = SERVER."?time=".$time_stamp."&image=".$values_elem['filename']."&story=".$user_login;
-//					$short_url = get_short_link( $image_url );
+					$image_url = SERVER."/?time=".$time_stamp."&image=".$values_elem['filename']."&story=".$user_login;
+					$image_url = get_short_link( $image_url );
 					$status .= " ".$image_url;
 				}
 				

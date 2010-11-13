@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+/* CSS Document */
+
+body {
+background: #000000;
+color: #DDD;
+margin: 0px;
+font-family: sans-serif;
+font-size: 0.8em;
+}
+
+#wrapper { margin: 20px auto; width: 960px; position: relative; background: url('deepvue_small.jpg') top left no-repeat; padding: 40px 0 0; }
+
+#debug { position: fixed; font-size: 70%; color: #EEE; z-index: 100; bottom: 0; right: 0; width: 400px; height: 150px; overflow: auto; background: #234; }
+
+h2 {
+font-family: "BebasNeueRegular", helvetica, Arial, Sans-Serif;
+color: #ffffff;
+height: 32px;
+margin-top: 0px;
+font-size: 30px;
+padding: 0px 0px 0px 0px;
+}
+
+h3 {
+font-family: "BebasNeueRegular", helvetica, Arial, Sans-Serif;
+color: #ffffff;
+height: 20px;
+margin-top: 0px;
+font-size: 20px;
+padding: 0px 0px 0px 0px;
+}
+
+a { text-decoration: none; color: #666; }
+a:hover { text-decoration: underline; }
+
+input { background: #333; border: 1px solid #DDD; color: #DDD; }
+
+th, td { padding: 5px; border-bottom: 1px solid #333;}
+th, tr:hover { background: #333; }
+
+

@@ -1,5 +1,10 @@
 <?php
 
+function compute_hash( $email ) {
+	list( $name, $domain ) = explode( "@", $email );
+	return substr( md5( $name | $domain ), 0, 4 );
+}
+
 function send_email( $email, $subj, $message ) {
 
 	$from = "info@deepvue.com";
@@ -9,8 +14,23 @@ function send_email( $email, $subj, $message ) {
 }
 
 function send_authcode( $login, $auth, $email ) {
-	$message  = "Hello, ".$login."!\n\nType in the app the following secret code: ".$auth."\n";
-	$message .= "Hope to see your story soon.\n\nBest,\nDeepVue";
+	$message  = "Hello, ".$login."!\n\nType in the app the following secret code: ".$auth."\n\n";
+
+	$message .= "About the Site\n";
+	$message .= "* Please connect Twitter and Facebook, so that notifications about your story will appear on your Facebook wall as well.\n";
+	$message .= "* Despite your setting in the app, you can later set an element as public or private anytime on the site, via the appropriate button.\n";
+	$message .= "* Make your notifications more interesting by checking 'Add a location to your tweets' in your Twitter settings.\n\n";
+
+	$message .= "About the App\n";
+	$message .= "* Make sure to allow DeepVue to use the location services.\n";
+	$message .= "* Writing your captions, hit space twice to add a period.\n";
+	$message .= "* Please remind that DeepVue only takes landscape photos.\n";
+	$message .= "* The app interface is pretty simple: tap on the torch icon to turn it on and off, double tap on the privacy button to set your present moment as private or public, gently touch the viewfinder or the camera icon to take a picture; the camera icon becomes white when the camera is ready. Tap the caption area to enter a new caption; in order to erase it just enter a space and hit 'Done'.\n";
+	$message .= "* We put every effort in order to design and implement efficient power management algorithms: on iPhone 4 the battery lasts up to over 20 hours while running DeepVue.\n\n";
+	
+	$message .= "Hope to see your story soon.\n\n";
+
+	$message .= "Best,\nDeepVue";
 
 	$subj = "Welcome! Here's your secret code.";
 	$from = "info@deepvue.com";
@@ -42,13 +62,13 @@ function get_short_link($url) {
 	$bitly_login="grudelsud";
 	$bitly_apikey="R_545aa8574c71919e07d1f8faf1d65682";
 	
-	$api_call = file_get_contents("http://api.bit.ly/shorten?version=2.0.1&longUrl=".$url."&login=".$bitly_login."&apiKey=".$bitly_apikey);	
+	$api_call = file_get_contents("http://api.bit.ly/shorten?version=2.0.1&longUrl=".urlencode( $url )."&login=".$bitly_login."&apiKey=".$bitly_apikey);	
 	$bitlyinfo = json_decode( utf8_encode($api_call), true );
 
 	if ($bitlyinfo['errorCode']==0) {
 		return $bitlyinfo['results'][urldecode($url)]['shortUrl'];
 	} else {
-		return false;
+		return $url;
 	}
 }
 

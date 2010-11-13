@@ -47,11 +47,22 @@ class DVDB {
 	 * @param unknown_type $id_element
 	 * @param unknown_type $is_public
 	 */
-	public function set_public( $id_element = "", $is_public = 1 ) {
+	public function set_public( $id_element = "", $is_public = 1, $id_user = -1, $check_user = false ) {
 		global $table_prefix;
 		
 		$tbl_element = $table_prefix."element";
-		$this->update( $tbl_element, array( 'is_public' => $is_public ), array( 'id_element' => $id_element ) );
+		$result = $this->query( "SELECT * FROM ".$tbl_element." WHERE id_element=".$id_element );
+		if( $this->num_rows > 0 ) {
+			$update = false;
+			if( true == $check_user && $id_user == $result->id_user ) {
+				$update = true;
+			} else if( false == $check_user ) {
+				$update = true;
+			}
+			if( $update ) {
+				$this->update( $tbl_element, array( 'is_public' => $is_public ), array( 'id_element' => $id_element ) );
+			}
+		}
 	}
 
 	/**
@@ -114,20 +125,25 @@ class DVDB {
 
 		$element = $this->get_row( "SELECT * FROM ".$tbl_element." WHERE id_element = ".$id_element );
 
-		if( 1 == $element->is_public || $element->id_user == $id_user ) {
+		if( 1 == $element->is_public ) {
 			
-			// fetch recipient and send notification email
 			$id_user_to = $element->id_user;
 			$user_to = $this->get_row( "SELECT * FROM ".$tbl_user." WHERE id_user = ".$id_user_to );
+	
+			$time = 3600 * $element->timezone + strtotime( $element->created );
+			$image_url = SERVER."/?time=".$time."&image=".$element->filename."&story=".$user_to->user_login;
+			$image_url = get_short_link( $image_url );
+				
+			// fetch recipient and send notification email
+			if( $id_user_to != $id_user ) {
+				
+				$msg .= "from: ".$id_user." to: ".$id_user_to." -- ";
+				
+				$message  = "\n".stripslashes( $comment_content )."\n";
+				$message .= "\n".$image_url."\n\n";
 
-			$time = strtotime( $element->created );
-			$image_url = SERVER."?time=".$time."&image=".$element->filename."&story=".$user_to->user_login;
-			$msg .= "from: ".$id_user." to: ".$id_user_to." -- ";
-			
-			$message  = "Someone commented on your story\n ".$image_url."\n";
-			$message .= "\"".stripslashes( $comment_content )."\"\n";
-			send_email( $user_to->user_email, "New comment", $message );
-			
+				send_email( $user_to->user_email, "Someone commented on your Story!", $message );
+			}
 			// now post a tweet if no previous comments are present
 //			$comment = $this->get_row( "SELECT * FROM ".$tbl_comment." WHERE id_element = ".$id_element );
 
@@ -138,16 +154,22 @@ class DVDB {
 
 				$twitterObj = new EpiTwitter(CONS_KEY, CONS_SECR, $oauth_token, $oauth_token_secret);
 
-				$status = "@".$user_to->user_login." ".$image_url." - ";
-				$tokens = explode( " ", $comment_content );
+				$sign = "@".$user_to->user_login." ".$image_url;
+				$status = "";
+				$tokens = explode( " ", stripslashes($comment_content) );
+				$broken = false;
 				foreach( $tokens as $token ) {
-					if( 140 > strlen( $token ) + strlen( $status ) + 4 ) {
+					if( 140 > strlen( $token ) + strlen( $status ) + strlen( $sign ) + 4 ) {
 						$status .= $token." ";
 					} else {
+						$broken = true;
 						break;
 					}
 				}
-				$status .= "...";
+				if( $broken ) {
+					$status .= "...";
+				}
+				$status .= $sign;
 				$parameters['status']  = $status;
 				try {
 					// update the status
@@ -227,6 +249,7 @@ class DVDB {
 			$sql .= " WHERE id_user=".$id_user;
 		}
 
+		$sql .= " ORDER BY id_user DESC;";
 		$this->query( $sql );
 		if( $this->num_rows > 0 ) {
 			return $this->last_result;
