@@ -4,6 +4,7 @@ require_once('load.php');
 $now = date( "c" );
 $msg = $now." -- ";
 $success = false;
+$has_caption = false;
 $has_photo = false;
 $auth_init = false;
 
@@ -61,7 +62,9 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 		list( $ev_time_end, $ev_timezone_end ) = explode( "GMT", $time_end );
 		$values_ev['timezone_end'] = $ev_timezone_end;
 		
-		if ( 1 == $_POST["is_new"] ) {
+		$is_new = $_POST["is_new"];
+
+		if ( 1 == $is_new ) {
 			
 			// TODO: check this, should it really close all previous running events?
 			$dvdb->update( $table_ev, array( 'running' => 0 ), array( 'id_user' => $id_user ) );
@@ -114,6 +117,7 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 		if( !empty( $caption ) ) {
 			$values_elem['caption'] = $caption; // => this is a caption, in this case image should be null.jpg
 			$msg .= "cap -- ";
+			$has_caption = true;
 			$success = true;
 		}
 
@@ -122,7 +126,7 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 		 */
 		$elem_time = $_POST["time"];
 		list( $el_time, $el_timezone ) = explode( "GMT", $elem_time );
-		$time_stamp = strtotime( $el_time ) + 3600 * $el_timezone;
+		$time_stamp = strtotime( $el_time." GMT" ) + 3600 * $el_timezone;
 		$values_elem['timezone'] = $el_timezone;
 		
 		$values_elem['created'] = $elem_time; // => 2010-08-08 14:14:14 +0200
@@ -152,16 +156,17 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 				$notify = 1;
 			}
 			$msg .= "fup=".$path_info['basename']." -- ";
-			$success = true;
 		}
 		
-		if( $success ) {
+		if( 1 == $is_new || $has_photo ) {
+			$success = true;
+			
 			if( !$auth_init ) {
 				$dvdb->insert( $table_el, $values_elem );
 				$msg .= "el_id=".$dvdb->insert_id." -- ";
 			}			
 			
-			if( 1 == $notify && !$auth_init && 1 == $_POST["is_public"] ) {
+			if( 1 == $notify && $has_caption && !$auth_init && 1 == $_POST["is_public"] ) {
 
 				$oauth_token = $user_result->oauth_token;
 				$oauth_token_secret = $user_result->oauth_secret;

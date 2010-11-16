@@ -130,7 +130,7 @@ class DVDB {
 			$id_user_to = $element->id_user;
 			$user_to = $this->get_row( "SELECT * FROM ".$tbl_user." WHERE id_user = ".$id_user_to );
 	
-			$time = 3600 * $element->timezone + strtotime( $element->created );
+			$time = 3600 * $element->timezone + strtotime( $element->created. " GMT" );
 			$image_url = SERVER."/?time=".$time."&image=".$element->filename."&story=".$user_to->user_login;
 			$image_url = get_short_link( $image_url );
 				
@@ -198,7 +198,7 @@ class DVDB {
 	 * @param string $user_login
 	 * @return array of element objects with properties: id_element, lat, lon, notify, is_public, metric, created, filename, ext, caption, user_login, id_event, (*)_start, (*)_end. with (*) = [lat, lon, time]
 	 */
-	public function get_elements( $id_element = "", $user_login = "", $public_only = true, $id = true ) {
+	public function get_elements( $id_element = "", $user_login = "", $public_only = true, $limit = "" ) {
 		global $table_prefix;
 		
 		$tbl_elem = $table_prefix."element";
@@ -206,7 +206,7 @@ class DVDB {
 		$tbl_event = $table_prefix."event";
 
 		$sql  = "SELECT ".$tbl_elem.".id_element as id_element, ".$tbl_elem.".id_event as id_event, ".$tbl_elem.".lat as lat, ".$tbl_elem.".lon as lon, ".$tbl_elem.".is_new as is_new, ".$tbl_elem.".is_public as is_public, ";
-		$sql .= $tbl_elem.".metric as metric, ".$tbl_elem.".created as created, ".$tbl_elem.".filename as filename, ".$tbl_elem.".ext as ext, ".$tbl_elem.".caption as caption, ";
+		$sql .= $tbl_elem.".metric as metric, ".$tbl_elem.".created as created, ".$tbl_elem.".timezone as tz_elem, ".$tbl_elem.".filename as filename, ".$tbl_elem.".ext as ext, ".$tbl_elem.".caption as caption, ";
 		$sql .= $tbl_user.".user_login as user_login, ".$tbl_user.".user_name as user_name, ";
 		$sql .= $tbl_event.".lat_start as lat_start, ".$tbl_event.".lon_start as lon_start, ".$tbl_event.".time_start as time_start, ";
 		$sql .= $tbl_event.".lat_end as lat_end, ".$tbl_event.".lon_end as lon_end, ".$tbl_event.".time_end as time_end, ";
@@ -224,8 +224,12 @@ class DVDB {
 			$sql .= "AND ".$tbl_elem.".is_public=1 ";
 		}
 		
-		$sql .= "ORDER BY ".$tbl_elem.".id_user, ".$tbl_elem.".id_event, created ASC;";
+		$sql .= "ORDER BY ".$tbl_elem.".id_user, ".$tbl_elem.".id_event, created ASC ";
 		
+		if( !empty( $limit ) ) {
+			$sql .= "LIMIT ".$limit;
+		}
+
 		$this->query( $sql );
 		if( $this->num_rows > 0 ) {
 			return $this->last_result;
@@ -296,11 +300,12 @@ class DVDB {
 		$sql .= $tbl_user.".user_login as user_login ";
 		$sql .= "FROM ".$tbl_place.", ".$tbl_user." ";
 		$sql .= "WHERE ".$tbl_place.".id_user = ".$tbl_user.".id_user ";
-		$sql .= "ORDER BY ".$tbl_place.".id_user, ".$tbl_place.".text ASC";
 		
 		if ( !empty( $user_login ) ) {
-			$sql .= "AND ".$tbl_place.".user_login = '".$user_login."' ";
+			$sql .= "AND ".$tbl_user.".user_login = '".$user_login."' ";
 		}
+
+		$sql .= "ORDER BY ".$tbl_place.".id_user, ".$tbl_place.".text ASC";
 		
 		$this->query( $sql );
 		if( $this->num_rows > 0 ) {

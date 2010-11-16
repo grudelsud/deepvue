@@ -19,15 +19,21 @@ function send_authcode( $login, $auth, $email ) {
 	$message .= "About the Site\n";
 	$message .= "* Please connect Twitter and Facebook, so that notifications about your story will appear on your Facebook wall as well.\n";
 	$message .= "* Despite your setting in the app, you can later set an element as public or private anytime on the site, via the appropriate button.\n";
-	$message .= "* Make your notifications more interesting by checking 'Add a location to your tweets' in your Twitter settings.\n\n";
-
+	$message .= "* Make your notifications more interesting by checking 'Add a location to your tweets' in your Twitter settings.\n";
+	$message .= "* On the site you can name places, so that your story results more interesting and meaningful.\n\n";
+	
 	$message .= "About the App\n";
 	$message .= "* Make sure to allow DeepVue to use the location services.\n";
 	$message .= "* Writing your captions, hit space twice to add a period.\n";
 	$message .= "* Please remind that DeepVue only takes landscape photos.\n";
 	$message .= "* The app interface is pretty simple: tap on the torch icon to turn it on and off, double tap on the privacy button to set your present moment as private or public, gently touch the viewfinder or the camera icon to take a picture; the camera icon becomes white when the camera is ready. Tap the caption area to enter a new caption; in order to erase it just enter a space and hit 'Done'.\n";
-	$message .= "* We put every effort in order to design and implement efficient power management algorithms: on iPhone 4 the battery lasts up to over 20 hours while running DeepVue.\n\n";
-	
+	$message .= "* We put every effort in order to design and implement efficient power management algorithms: on iPhone 4 the battery lasts up to over 20 hours while running DeepVue.\n";
+	$message .= "* DeepVue shares the best picture you take every 30 minutes (or one for every event). In order to take good photos be sure to wait until the camera icon is ready, and take multiple pics of the subject: DeepVue will take care of choosing the best one.\n";
+	$message .= "* Remember to set the app in ÔPublic modeÕ (double tap on lock icon: it will become a little bird).\n";
+	$message .= "* Remember to start the DeepVue app in the morning and keep it on in the background all day long.\n";
+    $message .= "* Please let us know if you experience a battery drain rate higher than 5% per hour.\n";
+    $message .= "* Photos with a caption will be notified to Twitter / Facebook.\n\n";
+    
 	$message .= "Hope to see your story soon.\n\n";
 
 	$message .= "Best,\nDeepVue";
@@ -143,6 +149,7 @@ function find_place( $id_user, $lat, $lon ) {
 	$fact = $lonm / $latm;
 	*/
 	
+	/*
 	$places = $dvdb->get_places( $id_user );
 
 	foreach ($places as $place) {
@@ -154,6 +161,7 @@ function find_place( $id_user, $lat, $lon ) {
 			return $place->id_place;
 		}
 	}
+	*/
 	return 0;
 }
 
