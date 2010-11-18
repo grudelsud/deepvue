@@ -198,7 +198,7 @@ class DVDB {
 	 * @param string $user_login
 	 * @return array of element objects with properties: id_element, lat, lon, notify, is_public, metric, created, filename, ext, caption, user_login, id_event, (*)_start, (*)_end. with (*) = [lat, lon, time]
 	 */
-	public function get_elements( $id_element = "", $user_login = "", $public_only = true, $limit = "" ) {
+	public function get_elements( $id_element = "", $user_login = "", $public_only = true, $limit = "", $since = "", $until = "" ) {
 		global $table_prefix;
 		
 		$tbl_elem = $table_prefix."element";
@@ -224,7 +224,15 @@ class DVDB {
 			$sql .= "AND ".$tbl_elem.".is_public=1 ";
 		}
 		
-		$sql .= "ORDER BY ".$tbl_elem.".id_user, ".$tbl_elem.".id_event, created ASC ";
+		if( !empty( $since ) ) {
+			$sql .= "AND ".$tbl_elem.".created > '". date("Y-m-d G:i:s", $since)."' ";
+		}
+
+		if( !empty( $until ) ) {
+			$sql .= "AND ".$tbl_elem.".created < '". date("Y-m-d G:i:s", $until)."' ";
+		}
+		
+		$sql .= "ORDER BY created ASC ";
 		
 		if( !empty( $limit ) ) {
 			$sql .= "LIMIT ".$limit;

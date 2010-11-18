@@ -25,6 +25,8 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 	
 	if( !empty( $user_result ) ) {
 
+		$success = true;
+		
 		$id_user = $user_result->id_user;
 		$user_login = $user_result->user_login;
 		$msg .= "uid=".$id_user." -- ";
@@ -117,8 +119,9 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 		if( !empty( $caption ) ) {
 			$values_elem['caption'] = $caption; // => this is a caption, in this case image should be null.jpg
 			$msg .= "cap -- ";
-			$has_caption = true;
-			$success = true;
+			if( 0 != strcmp( "...", $caption ) ) {
+				$has_caption = true;
+			}
 		}
 
 		/**
@@ -159,7 +162,6 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 		}
 		
 		if( 1 == $is_new || $has_photo ) {
-			$success = true;
 			
 			if( !$auth_init ) {
 				$dvdb->insert( $table_el, $values_elem );
@@ -200,7 +202,7 @@ if( !empty( $_POST['deepvue_upload'] ) ) {
 				$dvdb->update( $table_ev, array( 'has_photos' => 1 ), array( 'id_event' => $id_event ) );
 			}
 			
-		} // endif success
+		}
 
 	}
 }

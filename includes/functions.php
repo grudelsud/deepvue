@@ -29,7 +29,7 @@ function send_authcode( $login, $auth, $email ) {
 	$message .= "* The app interface is pretty simple: tap on the torch icon to turn it on and off, double tap on the privacy button to set your present moment as private or public, gently touch the viewfinder or the camera icon to take a picture; the camera icon becomes white when the camera is ready. Tap the caption area to enter a new caption; in order to erase it just enter a space and hit 'Done'.\n";
 	$message .= "* We put every effort in order to design and implement efficient power management algorithms: on iPhone 4 the battery lasts up to over 20 hours while running DeepVue.\n";
 	$message .= "* DeepVue shares the best picture you take every 30 minutes (or one for every event). In order to take good photos be sure to wait until the camera icon is ready, and take multiple pics of the subject: DeepVue will take care of choosing the best one.\n";
-	$message .= "* Remember to set the app in ‘Public mode’ (double tap on lock icon: it will become a little bird).\n";
+	$message .= "* Remember to set the app in 'Public mode' (double tap on lock icon: it will become a little bird).\n";
 	$message .= "* Remember to start the DeepVue app in the morning and keep it on in the background all day long.\n";
     $message .= "* Please let us know if you experience a battery drain rate higher than 5% per hour.\n";
     $message .= "* Photos with a caption will be notified to Twitter / Facebook.\n\n";
