@@ -72,7 +72,7 @@ function get_short_link($url) {
 	$bitly_login="grudelsud";
 	$bitly_apikey="R_545aa8574c71919e07d1f8faf1d65682";
 	
-	$api_call = file_get_contents("http://api.bit.ly/shorten?version=2.0.1&longUrl=".urlencode( $url )."&login=".$bitly_login."&apiKey=".$bitly_apikey);	
+	$api_call = file_get_contents("http://api.bit.ly/shorten?version=2.0.1&longUrl=".urlencode( $url )."&login=".$bitly_login."&apiKey=".$bitly_apikey);
 	$bitlyinfo = json_decode( utf8_encode($api_call), true );
 
 	if ($bitlyinfo['errorCode']==0) {
