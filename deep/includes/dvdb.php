@@ -143,11 +143,7 @@ class DVDB {
 				$message .= "\n".$image_url."\n\n";
 
 				send_email( $user_to->user_email, "Someone commented on your Story!", $message );
-			}
-			// now post a tweet if no previous comments are present
-//			$comment = $this->get_row( "SELECT * FROM ".$tbl_comment." WHERE id_element = ".$id_element );
 
-//			if( 0 == $this->num_rows ) {
 				$user_from = $this->get_row( "SELECT * FROM ".$tbl_user." WHERE id_user = ".$id_user );
 				$oauth_token = $user_from->oauth_token;
 				$oauth_token_secret = $user_from->oauth_secret;
@@ -178,7 +174,7 @@ class DVDB {
 				} catch( Exception $e ) {
 					$msg .= "excep=".$e->getMessage()." -- ";
 				}
-//			}
+			}
 			
 			// and finally update the comments table
 			$comment_values["id_element"] = $id_element;

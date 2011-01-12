@@ -1,6 +1,19 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /*
+ * Application specific defines
+ * 
+ * @author TMA
+ * @date 30.12.2010
+ */
+define('JSON', 'JSON', TRUE);
+define('OBJECT', 'OBJECT', TRUE);
+
+define( 'SET', -1 );
+define( 'PAGE_SIZE', 20 );
+define( 'SINGLE_VIEW', 'single_view');
+
+/*
 |--------------------------------------------------------------------------
 | File and Directory Modes
 |--------------------------------------------------------------------------

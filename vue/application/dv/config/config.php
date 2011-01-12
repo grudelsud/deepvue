@@ -1,6 +1,15 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /*
+ * Application specific configuration variables
+ * 
+ * @author TMA
+ * @date 30.12.2010
+ */
+$config['consumer_key'] = 'ON89tMujCKM36xTd0rW8OQ';
+$config['consumer_key_secret'] = 'ZMITKClcEl7jgryi5mowbGa3D2t14hQAFu6PGRc';
+
+/*
 |--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
@@ -11,7 +20,7 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://example.com/";
+$config['base_url']	= "http://".$_SERVER['HTTP_HOST']."/vue/";
 
 /*
 |--------------------------------------------------------------------------
@@ -123,7 +132,7 @@ $config['subclass_prefix'] = 'MY_';
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
 */
-$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+$config['permitted_uri_chars'] = 'a-z 0-9?~%.:_\-';
 
 
 /*
@@ -173,7 +182,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 2;
 
 /*
 |--------------------------------------------------------------------------
@@ -184,7 +193,7 @@ $config['log_threshold'] = 0;
 | system/logs/ folder.  Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '';
+$config['log_path'] = APPPATH.'logs/';
 
 /*
 |--------------------------------------------------------------------------
@@ -217,7 +226,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = "";
+$config['encryption_key'] = "la password numerina";
 
 /*
 |--------------------------------------------------------------------------
@@ -313,7 +322,7 @@ $config['compress_output'] = FALSE;
 | regarding date handling.
 |
 */
-$config['time_reference'] = 'local';
+$config['time_reference'] = 'gmt';
 
 
 /*

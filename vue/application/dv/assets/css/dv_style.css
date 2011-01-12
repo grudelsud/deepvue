@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+.modal { background: url('../img/alpha40black.png') repeat scroll top left; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; }
+.form_wrapper { position: fixed; width: 400px; border: 1px solid #EEE; background: #FFF; top: 150px; left: 35%; }
+
+#login_form, #forgot_form { }
+
+#navigation { text-align: right; padding: 5px 0 0; }
+
+#navigation ul { list-style-type: none; }
+#navigation ul li { display: inline; }
+
+#splash { height: 350px; background: #999; }
+
+#elems_horizthumbs { text-align: center; height: 60px; overflow: hidden; }
+#elems_horizthumbs a img { display: inline; }
+#elems_horizthumbs li { display: inline; margin-right: 3px; }
+
+#single_main {}
+#single_side {}
+
+#debug { position: fixed; width: 550px; height: 150px; line-height: 1em; font-size: 0.7em; font-family: monospace; bottom: 0; right: 0; background: #333; color: #EEE; overflow: scroll;}

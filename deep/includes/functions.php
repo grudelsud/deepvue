@@ -1,5 +1,32 @@
 <?php
 
+function reverse_geocode( $lat, $lon ) {
+	$url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=".$lat.",".$lon."&sensor=false";
+
+	$ch = curl_init();
+
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_HEADER, FALSE);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+
+	$res_json = curl_exec($ch);
+	curl_close($ch);
+
+	if( FALSE != $res_json ) {
+		$obj_loc = json_decode( $res_json );
+
+		if( "OK" == $obj_loc->status ) {
+			foreach( $obj_loc->results as $result ) {
+				$parts = explode(",", $result->formatted_address);
+				// it was preg_replace("/[^a-zA-Z\s]/",	"", $parts[1]) but it's too arbitrary (e.g. a postcode in london is made of letters and numbers)
+				$address = $parts[0].", ".$parts[1];
+				return $address;
+			}
+		}
+	}
+	return "";
+}
+
 function compute_hash( $email ) {
 	list( $name, $domain ) = explode( "@", $email );
 	return substr( md5( $name | $domain ), 0, 4 );
@@ -9,7 +36,7 @@ function send_email( $email, $subj, $message ) {
 
 	$from = "info@deepvue.com";
 	$headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-	
+
 	mail( $email, $subj, $message, $headers );
 }
 
@@ -17,17 +44,17 @@ function send_authcode( $login, $auth, $email ) {
 	$message  = "Hello, ".$login."!\n\nType in the app the following secret code: ".$auth."\n\n";
 
 	$message .= "DeepVue enables you to share your personal story hassle-free.\n\n";
-	
+
 	$message .= "DeepVue shares the best moments you capture, along with location information to a rich photo story timeline on the DeepVue website (www.deepvue.com).\n\n";
-	
+
 	$message .= "DeepVue uses the location services in the background wisely, turning on and off the GPS module.\n\n";
-	
+
 	$message .= "About the Site\n";
 	$message .= "* Please connect Twitter and Facebook, so that notifications about your story will appear on your Facebook wall as well.\n";
 	$message .= "* Despite your setting in the app, you can later set an element as public or private anytime on the site, via the appropriate button.\n";
 	$message .= "* Make your notifications more interesting by checking 'Add a location to your tweets' in your Twitter settings.\n";
 	$message .= "* On the site you can name places, so that your story results more interesting and meaningful.\n\n";
-	
+
 	$message .= "About the App\n";
 	$message .= "* Make sure to allow DeepVue to use the location services.\n";
 	$message .= "* Please remind that DeepVue only captures landscape moments.\n";
@@ -37,7 +64,7 @@ function send_authcode( $login, $auth, $email ) {
 	$message .= "* Remember to start the DeepVue app in the morning and keep it on in the background all day long.\n";
 	$message .= "* Please let us know if you experience a battery drain rate higher than 5% per hour.\n";
 	$message .= "* Moments will be notified to Twitter / Facebook.\n\n";
-	
+
 	$message .= "Hope to see your story soon.\n\n";
 
 	$message .= "Best,\nDeepVue";
@@ -45,7 +72,7 @@ function send_authcode( $login, $auth, $email ) {
 	$subj = "Welcome! Here's your secret code.";
 	$from = "info@deepvue.com";
 	$headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-	
+
 	mail( $email, $subj, $message, $headers );
 }
 
@@ -71,7 +98,7 @@ function logout()
 function get_short_link($url) {
 	$bitly_login="grudelsud";
 	$bitly_apikey="R_545aa8574c71919e07d1f8faf1d65682";
-	
+
 	$api_call = file_get_contents("http://api.bit.ly/shorten?version=2.0.1&longUrl=".urlencode( $url )."&login=".$bitly_login."&apiKey=".$bitly_apikey);
 	$bitlyinfo = json_decode( utf8_encode($api_call), true );
 
@@ -132,40 +159,40 @@ function find_place( $id_user, $lat, $lon ) {
 	$radius = 80;
 	$latm = 111110;
 	$lonm = 111110;
-	
-	/*
-	/////////////////////////////////
-	// Convert latitude to radians
-	$lat = $latdeg*(2.0 * pi())/360.0;
-	// Set up "Constants"
-	$m1 = 111132.92;  // latitude calculation term 1
-	$m2 = -559.82;  // latitude calculation term 2
-	$m3 = 1.175;   // latitude calculation term 3
-	$m4 = -0.0023;  // latitude calculation term 4
-	$p1 = 111412.84;  // longitude calculation term 1
-	$p2 = -93.5;   // longitude calculation term 2
-	$p3 = 0.118;   // longitude calculation term 3
-	// Calculate the length of a degree of latitude and longitude in meters
-	latm = m1 + (m2 * Math.cos(2 * lat)) + (m3 * Math.cos(4 * lat)) + (m4 * Math.cos(6 * lat));
-	lonm = (p1 * Math.cos(lat)) + (p2 * Math.cos(3 * lat)) + (p3 * Math.cos(5 * lat));
-	/////////////////////////////////
-	
-	$fact = $lonm / $latm;
-	*/
-	
-	/*
-	$places = $dvdb->get_places( $id_user );
 
-	foreach ($places as $place) {
+	/*
+	 /////////////////////////////////
+	 // Convert latitude to radians
+	 $lat = $latdeg*(2.0 * pi())/360.0;
+	 // Set up "Constants"
+	 $m1 = 111132.92;  // latitude calculation term 1
+	 $m2 = -559.82;  // latitude calculation term 2
+	 $m3 = 1.175;   // latitude calculation term 3
+	 $m4 = -0.0023;  // latitude calculation term 4
+	 $p1 = 111412.84;  // longitude calculation term 1
+	 $p2 = -93.5;   // longitude calculation term 2
+	 $p3 = 0.118;   // longitude calculation term 3
+	 // Calculate the length of a degree of latitude and longitude in meters
+	 latm = m1 + (m2 * Math.cos(2 * lat)) + (m3 * Math.cos(4 * lat)) + (m4 * Math.cos(6 * lat));
+	 lonm = (p1 * Math.cos(lat)) + (p2 * Math.cos(3 * lat)) + (p3 * Math.cos(5 * lat));
+	 /////////////////////////////////
+
+	 $fact = $lonm / $latm;
+	 */
+
+	/*
+	 $places = $dvdb->get_places( $id_user );
+
+	 foreach ($places as $place) {
 		$dlatm = ($lat - $place->lat) * $latm;
 		$dlonm = ($lon - $place->lon) * $lonm;
 
 		$dist = round( sqrt($dlatm*$dlatm + $dlonm*$dlonm) );
 		if ( $dist < $radius ) {
-			return $place->id_place;
+		return $place->id_place;
 		}
-	}
-	*/
+		}
+		*/
 	return 0;
 }
 
