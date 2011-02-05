@@ -8,6 +8,9 @@
  */
 define('JSON', 'JSON', TRUE);
 define('OBJECT', 'OBJECT', TRUE);
+define('ARRAY_K', 'ARRAY_K', TRUE);
+
+define('REGISTER', 'register');
 
 define( 'SET', -1 );
 define( 'PAGE_SIZE', 20 );

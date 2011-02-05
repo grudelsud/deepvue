@@ -25,4 +25,12 @@ if ( ! function_exists('object_to_array'))
 	}
 }
 
+if ( ! function_exists('dv_code'))
+{
+	function dv_code( $email ) 
+	{
+		list( $name, $domain ) = explode( "@", $email );
+		return substr( md5( $name | $domain ), 0, 4 );
+	}
+}
 /* end of assets_helper.php */

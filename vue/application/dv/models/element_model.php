@@ -27,6 +27,8 @@ class Element_model extends CI_Model {
 		
 		if( 0 == strcasecmp($encoding, OBJECT) ) {
 			return $query->result();
+		} else if( 0 == strcasecmp($encoding, ARRAY_K ) ) { 
+			return $query->result_array();
 		} else {
 			return json_encode( $query->result() );
 		}
@@ -47,6 +49,8 @@ class Element_model extends CI_Model {
 
 		if( 0 == strcasecmp($encoding, OBJECT) ) {
 			return $query->result();
+		} else if( 0 == strcasecmp($encoding, ARRAY_K ) ) { 
+			return $query->result_array();
 		} else {
 			return json_encode( $query->result() );
 		}

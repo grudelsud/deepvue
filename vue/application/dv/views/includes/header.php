@@ -31,8 +31,21 @@
 
 <body>
 <?php 
-	$logged = FALSE;
-	$name = NULL;
+	$user_login = $this->session->userdata('user_login');
+	
+	$error = $this->session->flashdata('error');
+	$info = $this->session->flashdata('info');
+	
+	if( $error ) {
+?>
+	<div class="error"><?php echo $error; ?></div>
+<?php
+	}
+	if( $info ) {
+?>
+	<div class="info"><?php echo $info; ?></div>
+<?php
+	}
 ?>
 <?php $this->load->view('includes/login_form'); ?>
 
@@ -44,12 +57,13 @@
 		</div><!-- end of #header -->
 		<div id="navigation" class="ninecol last">
 			<ul>
-				<?php if( $logged ): ?>
-				<li>Hi, <a href="<?php echo site_url('profile') ?>" title="profile"><?php echo $name; ?>!</a></li>
-				<li><a href="<?php echo site_url('friends') ?>" title="friends">friends</a></li>
+				<?php if( $user_login ): ?>
+				<li>Hi, <a href="<?php echo site_url('user/profile').'/'.$user_login; ?>" title="profile"><?php echo $user_login; ?>!</a></li>
+				<li><a href="<?php echo site_url('user/friends') ?>" title="friends">friends</a></li>
 				<li><a href="<?php echo site_url('authorizer/logout') ?>" title="logout">logout</a></li>
 				<?php else: ?>
 				<li><a onclick="$('#login_form').show(); $('#username').focus(); return false;" href="#">Sign In</a></li>
+				<li>or <a href="<?php echo site_url('authorizer/register') ?>" title="register">Register</a></li>
 				<?php endif; ?>
 			</ul>
 		</div><!-- end of #navigation -->

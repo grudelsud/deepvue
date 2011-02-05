@@ -1,6 +1,6 @@
 <?php
 
-function reverse_geocode( $lat, $lon ) {
+function reverse_geocode( $lat, $lon, $cut = TRUE ) {
 	$url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=".$lat.",".$lon."&sensor=false";
 
 	$ch = curl_init();
@@ -17,10 +17,14 @@ function reverse_geocode( $lat, $lon ) {
 
 		if( "OK" == $obj_loc->status ) {
 			foreach( $obj_loc->results as $result ) {
-				$parts = explode(",", $result->formatted_address);
-				// it was preg_replace("/[^a-zA-Z\s]/",	"", $parts[1]) but it's too arbitrary (e.g. a postcode in london is made of letters and numbers)
-				$address = $parts[0].", ".$parts[1];
-				return $address;
+				if( TRUE == $cut ) {
+					$parts = explode(",", $result->formatted_address);
+					// it was preg_replace("/[^a-zA-Z\s]/",	"", $parts[1]) but it's too arbitrary (e.g. a postcode in london is made of letters and numbers)
+					$address = $parts[0].", ".$parts[1];
+					return $address;
+				} else {
+					return $result->formatted_address;
+				}
 			}
 		}
 	}

@@ -31,12 +31,12 @@ echo form_close();
 <?php
 $attributes = array( 'id' => 'forgot_form' );
 
-$form_field['username'] = array('name' => 'username', 'id' => 'username');
+$form_field['email'] = array('name' => 'email', 'id' => 'email');
 
 echo form_open('authorizer/forgot', $attributes);
 
-echo form_label('Email', 'username');
-echo form_input( $form_field['username'] );
+echo form_label('Email', 'email');
+echo form_input( $form_field['email'] );
 echo "<br />";
 ?>
 <a class="button disabled fit" onclick="$('.modal').hide(); return false" href="#">Cancel</a>
